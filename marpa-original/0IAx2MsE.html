@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/0IAx2MsE -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>18-Month Integration Roadmap</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(5)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* Timeline Styles */
+        .roadmap-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .phase-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 0 15px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Phase Header */
+        .phase-header {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .phase-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .phase-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .phase-duration {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Milestones List */
+        .milestones-list {
+            flex: 1;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .milestone-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .milestone-icon {
+            margin-right: 12px;
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        /* Color Variants */
+        .phase-teal { border-top: 4px solid var(--teal); }
+        .phase-teal .phase-number { color: var(--teal); }
+        .phase-teal .milestone-icon { color: var(--teal); }
+        .phase-teal .phase-marker { background-color: var(--teal); }
+
+        .phase-yellow { border-top: 4px solid var(--yellow); }
+        .phase-yellow .phase-number { color: var(--yellow); }
+        .phase-yellow .milestone-icon { color: var(--yellow); }
+        .phase-yellow .phase-marker { background-color: var(--yellow); }
+
+        .phase-coral { border-top: 4px solid var(--coral); }
+        .phase-coral .phase-number { color: var(--coral); }
+        .phase-coral .milestone-icon { color: var(--coral); }
+        .phase-coral .phase-marker { background-color: var(--coral); }
+
+        /* Central Marker on Timeline */
+        .timeline-connector {
+            position: absolute;
+            top: -30px; /* Position above card to connect to timeline if timeline was above, or center */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            display: none; /* Hidden for this layout */
+        }
+
+        /* Bottom Key Milestone */
+        .key-milestone {
+            margin-top: auto;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .key-icon {
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        /* Connecting Arrows */
+        .arrow-connector {
+            position: absolute;
+            right: -22px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 24px;
+            z-index: 1;
+        }
+        
+        .phase-card:last-child .arrow-connector {
+            display: none;
+        }
+
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 border-b border-[#044c73] pb-4">
+<div>
+<div class="flex items-center mb-2">
+<span class="w-2 h-2 bg-[#ef6337] rounded-full mr-2"></span>
+<p class="text-[#ef6337] font-bold tracking-widest text-xs uppercase">Chapter 4: Design-Build Expansion</p>
+</div>
+<h1 class="font-serif text-4xl text-[#f5f7fa]">18-MONTH INTEGRATION ROADMAP</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">SCENARIO C TIMELINE</p>
+</div>
+</div>
+<!-- Main Content -->
+<div class="roadmap-container">
+<!-- Timeline Line Background -->
+<!-- Phase 1 -->
+<div class="phase-card phase-teal">
+<div class="phase-header">
+<p class="phase-number">Phase 1</p>
+<h3 class="phase-title">Foundation</h3>
+<div class="phase-duration">
+<i class="far fa-calendar-alt mr-2"></i>
+<p>Months 1–6</p>
+</div>
+</div>
+<ul class="milestones-list">
+<li class="milestone-item">
+<i class="fas fa-check-circle milestone-icon"></i>
+<p>Complete financial and operational due diligence</p>
+</li>
+<li class="milestone-item">
+<i class="fas fa-file-contract milestone-icon"></i>
+<p>Finalize integration term sheet &amp; legal structure</p>
+</li>
+<li class="milestone-item">
+<i class="fas fa-handshake milestone-icon"></i>
+<p>Define 40/30/30 governance &amp; operating agreement</p>
+</li>
+</ul>
+<div class="key-milestone">
+<i class="fas fa-flag key-icon text-[#8db6b0]"></i>
+<p class="text-[#b0b8c1]">Milestone: Combined Entity Formation</p>
+</div>
+<div class="arrow-connector">
+<i class="fas fa-chevron-right"></i>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="phase-card phase-yellow">
+<div class="phase-header">
+<p class="phase-number">Phase 2</p>
+<h3 class="phase-title">Integration</h3>
+<div class="phase-duration">
+<i class="far fa-calendar-alt mr-2"></i>
+<p>Months 7–12</p>
+</div>
+</div>
+<ul class="milestones-list">
+<li class="milestone-item">
+<i class="fas fa-project-diagram milestone-icon"></i>
+<p>Merge financial systems and project management tools</p>
+</li>
+<li class="milestone-item">
+<i class="fas fa-users milestone-icon"></i>
+<p>Full team integration and cultural alignment workshops</p>
+</li>
+<li class="milestone-item">
+<i class="fas fa-hard-hat milestone-icon"></i>
+<p>Execute first 3 integrated design-build pilot projects</p>
+</li>
+</ul>
+<div class="key-milestone">
+<i class="fas fa-flag key-icon text-[#FFE66D]"></i>
+<p class="text-[#b0b8c1]">Milestone: First Integrated Revenue</p>
+</div>
+<div class="arrow-connector">
+<i class="fas fa-chevron-right"></i>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="phase-card phase-coral">
+<div class="phase-header">
+<p class="phase-number">Phase 3</p>
+<h3 class="phase-title">Optimization</h3>
+<div class="phase-duration">
+<i class="far fa-calendar-alt mr-2"></i>
+<p>Months 13–18</p>
+</div>
+</div>
+<ul class="milestones-list">
+<li class="milestone-item">
+<i class="fas fa-rocket milestone-icon"></i>
+<p>Full operational scale across all new projects</p>
+</li>
+<li class="milestone-item">
+<i class="fas fa-chart-line milestone-icon"></i>
+<p>First annual performance review &amp; margin analysis</p>
+</li>
+<li class="milestone-item">
+<i class="fas fa-bullseye milestone-icon"></i>
+<p>Establish 3-year growth targets for combined entity</p>
+</li>
+</ul>
+<div class="key-milestone">
+<i class="fas fa-flag key-icon text-[#ef6337]"></i>
+<p class="text-[#b0b8c1]">Milestone: Margin Stabilization at 30%+</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-auto pt-4 flex justify-between items-center border-t border-[#044c73] border-opacity-30">
+<p class="text-[#4e5d6c] text-xs tracking-widest uppercase">Confidential · MARPA Equity Pathway 2026</p>
+<p class="text-[#4e5d6c] text-xs font-mono">CH4-S08</p>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28ab1e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDjUPu%2FCQA%2BrLPwzBLxfS8fEB4EhZNeuc6vZxWj7ByU1mute8nBcdgbBwUrvQ8rIYjPqbJHXxVlkwclc5PYt3u4%2BEw0HpyNusWQD%2FC6vMr2%2BzERdwOUAjEwqBGbrr8ObFPYQqv8WlxDPW3J1WlGWHcFmHSxDzjmLnNj1714TPZZv%2BCQEsjb1GKCSn2OPeGr37KDw25rsl12THdUc5H0MIjwZgPgJ1Isy0sEBnJA3s1Ym82sUgaYA9ZOSmNZcta6VWkQ01tLMvJst51NEZNQ4%2BSOx1hQZNKmDDkXqGypq1A9y0%2F51eZPECnj3vQ3d8dfd6KxfHB1UzpbvqjuJf6u3QO2w1b8xVWxQtsPPD0jHGRXi9uMcYs3qWxXJjv3xkDkpp%2Bgk49l9sEuvwe6gSAm32xFte0AxGQn7%2BejlVaJV%2FD9AyEhi7amENX3h5vaFp6hIGJke5dSEg6KuwbJKt%2FOTViPoVmmdB0fQAlFTWLrFaX9ofRTkdK4lmryE6UE%2BrZPtR0E8sMy93hRhvSGoDCN4c4vio6vDfS8jZwW9MihSUQx2eVLzQCQXY6kf10rtAHWz5CpGDIt7fpKRt%2Bc6ijjDIWc7WSQKnFD9aew%2FZxE%2F4DQ95OUHWSL0nbWIViM2MthaBJAWzXE09t7Yel2slpEP73jx7fXvLtAuRBJzunGrlgA0gCtK88BtfEgG8uSc6bytbCqu61qAW%2F0edTeTeXi4TK5CdS2%2FBNCmXK1zEyThtgFqS";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDjUPu/CQA+rLPwzBLxfS8fEB4EhZNeuc6vZxWj7ByU1mute8nBcdgbBwUrvQ8rIYjPqbJHXxVlkwclc5PYt3u4+Ew0HpyNusWQD/C6vMr2+zERdwOUAjEwqBGbrr8ObFPYQqv8WlxDPW3J1WlGWHcFmHSxDzjmLnNj1714TPZZv+CQEsjb1GKCSn2OPeGr37KDw25rsl12THdUc5H0MIjwZgPgJ1Isy0sEBnJA3s1Ym82sUgaYA9ZOSmNZcta6VWkQ01tLMvJst51NEZNQ4+SOx1hQZNKmDDkXqGypq1A9y0/51eZPECnj3vQ3d8dfd6KxfHB1UzpbvqjuJf6u3QO2w1b8xVWxQtsPPD0jHGRXi9uMcYs3qWxXJjv3xkDkpp+gk49l9sEuvwe6gSAm32xFte0AxGQn7+ejlVaJV/D9AyEhi7amENX3h5vaFp6hIGJke5dSEg6KuwbJKt/OTViPoVmmdB0fQAlFTWLrFaX9ofRTkdK4lmryE6UE+rZPtR0E8sMy93hRhvSGoDCN4c4vio6vDfS8jZwW9MihSUQx2eVLzQCQXY6kf10rtAHWz5CpGDIt7fpKRt+c6ijjDIWc7WSQKnFD9aew/ZxE/4DQ95OUHWSL0nbWIViM2MthaBJAWzXE09t7Yel2slpEP73jx7fXvLtAuRBJzunGrlgA0gCtK88BtfEgG8uSc6bytbCqu61qAW/0edTeTeXi4TK5CdS2/BNCmXK1zEyThtgFqS";
+    </script>
+    </body></html>

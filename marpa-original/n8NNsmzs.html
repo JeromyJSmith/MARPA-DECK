@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/n8NNsmzs -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Design-Build - The Upside</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(2)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+            border: 1px solid #1e2732;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .summary-card {
+            background-color: rgba(4, 76, 115, 0.1);
+            border: 1px solid rgba(4, 76, 115, 0.3);
+            border-top: 4px solid var(--coral);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .summary-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--coral);
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+        
+        .summary-value-small {
+            font-size: 24px;
+        }
+
+        .summary-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        
+        .highlight-badge {
+            background-color: rgba(255, 230, 109, 0.2);
+            color: var(--yellow);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Implications Section */
+        .implications-box {
+            background-color: rgba(21, 26, 33, 0.8);
+            border-left: 4px solid var(--yellow);
+            padding: 24px 32px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .implication-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+        .implication-item:last-child { margin-bottom: 0; }
+
+        .implication-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(255, 230, 109, 0.2);
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 12px;
+        }
+
+        /* Emotional Anchor */
+        .anchor-box {
+            background-color: rgba(239, 99, 55, 0.05);
+            border: 1px dashed rgba(239, 99, 55, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--coral);
+            opacity: 0.3;
+            margin-right: 16px;
+            line-height: 0;
+        }
+        
+        .arrow-right {
+            color: var(--teal);
+            margin: 0 8px;
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 border-b border-[#044c73] pb-6">
+<div>
+<p class="text-[#ef6337] font-bold tracking-widest text-xs mb-2 uppercase">Chapter 4: Design-Build Expansion</p>
+<h1 class="font-serif text-4xl text-[#f5f7fa]">DESIGN-BUILD: THE UPSIDE</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">SCENARIO C SUMMARY</p>
+</div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col">
+<!-- Key Numbers Grid -->
+<div class="summary-grid">
+<!-- Card 1 -->
+<div class="summary-card">
+<p class="summary-value">10% <span class="arrow-right">→</span> 32%</p>
+<p class="summary-label">EBITDA Margin</p>
+<p class="text-[#b0b8c1] text-xs mt-2">Significant margin expansion</p>
+</div>
+<!-- Card 2 -->
+<div class="summary-card">
+<p class="summary-value">+$2.4M</p>
+<p class="summary-label">Additional Profit</p>
+<p class="text-[#b0b8c1] text-xs mt-2">Annual profit increase</p>
+</div>
+<!-- Card 3 -->
+<div class="summary-card">
+<p class="summary-value summary-value-small">$3.9M vs $1.73M</p>
+<p class="summary-label">Luke's Exit Value</p>
+<p class="text-[#b0b8c1] text-xs mt-2">More than double design-only</p>
+</div>
+<!-- Card 4 -->
+<div class="summary-card">
+<div class="highlight-badge">Highest Potential</div>
+<p class="summary-value">$14M+</p>
+<p class="summary-label">Valuation Ceiling</p>
+<p class="text-[#b0b8c1] text-xs mt-2">Maximum enterprise value</p>
+</div>
+</div>
+<!-- What This Means Section -->
+<div class="implications-box">
+<h3 class="text-[#FFE66D] font-bold text-sm uppercase tracking-wider mb-4">Why Design-Build is the Biggest Opportunity</h3>
+<div class="implication-item">
+<div class="implication-icon"><i class="fas fa-chart-line"></i></div>
+<p class="text-[#f5f7fa]">Luke earns significantly more by owning less of a much bigger pie</p>
+</div>
+<div class="implication-item">
+<div class="implication-icon"><i class="fas fa-layer-group"></i></div>
+<p class="text-[#f5f7fa]">Trade-off: Most complexity and coordination required among 3 principals</p>
+</div>
+<div class="implication-item">
+<div class="implication-icon"><i class="fas fa-rocket"></i></div>
+<p class="text-[#f5f7fa]">Creates a vertically integrated powerhouse with recurring revenue</p>
+</div>
+</div>
+<!-- Emotional Anchor -->
+<div class="anchor-box mt-auto">
+<span class="quote-mark">"</span>
+<p class="text-[#f5f7fa] text-xl font-serif italic text-center">
+                    Feels like building a bigger machine together.
+                </p>
+<span class="quote-mark ml-4" style="transform: scaleX(-1);">"</span>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-6 flex justify-between items-center border-t border-[#044c73] pt-4 opacity-60">
+<div class="flex items-center">
+<i class="fas fa-info-circle text-[#ef6337] mr-2 text-xs"></i>
+<p class="text-[#b0b8c1] text-xs">Chapter 4 Summary</p>
+</div>
+<p class="text-[#b0b8c1] text-xs tracking-widest uppercase">Confidential Presentation</p>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28b21e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDqU90HhEGkcLQfb6246cEFVH%2Bva%2FF5zRpIkXjuB%2BGjNjZWjWrCgQ0SwwgSIKFB6GvDUJBB8VeycMjnfQoK4s5wNCKzxVGOdiGTxmG%2F6wExvhn8mfjhAVs%2FdsgI%2BuFlVTcNZMNUNFoKZKmIArN4xIWnC45JP6OCQd%2FJhfKe%2B95F%2BDVbP7fFc9XTIpJfkkBC8JS6i4JXXUagkydXn2zlHSCIuFj46Mge3c1Q6tIX1Ndlbi%2BARhBp4xz%2BRmvTpmbhqfZfrRu2rL%2FDSrOPis2sv6bkXsL25c1fA7ALhnddC2IKiZkq2xKDlF5JkB7%2F5QAkNcaromvHM4FwXWIH0pg3b05CGV4DgrwkxhMqp41i6GGpWs2KbgEMZbPpNpTU10mYtGCXkI3%2F3tuiBJx9OkL8IFryb2PiF%2BAajH6GFkT0xk%2FkgXuw55MjnIQf94uNLmMP7iwckjY%2FYWPNMG9OQghFYHdMiOTtscHgcDFcLk4DRKC7HS10%2Blai8tYp1w%2Bu39kt5u22e9BWkVjVL9aH30I6pwYvCzaNhE6UrTyo6j4Z7ctfq4WtuJmwQscPieQVmdOh8t4UByC%2FRn3wTkDkdESXSk7XVeDoxR1LHbxXNYr3wb7NPrhItFy%2Fi5p3%2B89RQfQ24xZ5XwEX%2Ft881b9jifPtA5JmiWakmVDjgot8RPbR9PJ0dt7BZ99ZHLUVe12X1bpRJ7356roRIaPgRLeTjQwnSrayXzagJZuk4nUAKmEtaGH5G0";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDqU90HhEGkcLQfb6246cEFVH+va/F5zRpIkXjuB+GjNjZWjWrCgQ0SwwgSIKFB6GvDUJBB8VeycMjnfQoK4s5wNCKzxVGOdiGTxmG/6wExvhn8mfjhAVs/dsgI+uFlVTcNZMNUNFoKZKmIArN4xIWnC45JP6OCQd/JhfKe+95F+DVbP7fFc9XTIpJfkkBC8JS6i4JXXUagkydXn2zlHSCIuFj46Mge3c1Q6tIX1Ndlbi+ARhBp4xz+RmvTpmbhqfZfrRu2rL/DSrOPis2sv6bkXsL25c1fA7ALhnddC2IKiZkq2xKDlF5JkB7/5QAkNcaromvHM4FwXWIH0pg3b05CGV4DgrwkxhMqp41i6GGpWs2KbgEMZbPpNpTU10mYtGCXkI3/3tuiBJx9OkL8IFryb2PiF+AajH6GFkT0xk/kgXuw55MjnIQf94uNLmMP7iwckjY/YWPNMG9OQghFYHdMiOTtscHgcDFcLk4DRKC7HS10+lai8tYp1w+u39kt5u22e9BWkVjVL9aH30I6pwYvCzaNhE6UrTyo6j4Z7ctfq4WtuJmwQscPieQVmdOh8t4UByC/Rn3wTkDkdESXSk7XVeDoxR1LHbxXNYr3wb7NPrhItFy/i5p3+89RQfQ24xZ5XwEX/t881b9jifPtA5JmiWakmVDjgot8RPbR9PJ0dt7BZ99ZHLUVe12X1bpRJ7356roRIaPgRLeTjQwnSrayXzagJZuk4nUAKmEtaGH5G0";
+    </script>
+    </body></html>

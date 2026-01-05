@@ -1,0 +1,35 @@
+# 🚀 DEPLOY TO GITHUB - 3 STEPS
+
+## Step 1: Create GitHub Repository
+1. Go to github.com
+2. Click "New repository"
+3. Name it: `marpa-presentation`
+4. Make it PUBLIC
+5. Click "Create repository"
+
+## Step 2: Upload Files
+1. Click "uploading an existing file"
+2. Drag ALL 74 files from this folder
+3. Click "Commit changes"
+
+## Step 3: Enable GitHub Pages
+1. Go to Settings
+2. Click "Pages" (left sidebar)
+3. Source: Select "main" branch
+4. Click "Save"
+5. Wait 2 minutes
+
+## ✅ Your URL:
+https://YOUR-USERNAME.github.io/marpa-presentation/
+
+---
+
+That's it! Your original MARPA presentation is now live!
+
+## 📱 To Update:
+Just upload new files to the repository - changes go live automatically.
+
+## 🎯 Total Files:
+- 74 files total
+- 6.2 MB size
+- All original content preserved

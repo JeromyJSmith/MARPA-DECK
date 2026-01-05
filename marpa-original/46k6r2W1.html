@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/46k6r2W1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Three-Way Ownership Split</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(5)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<script src="./chart.js"></script>
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            height: 100%;
+            align-items: center;
+        }
+
+        /* Chart Area */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        /* Principal Cards */
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .principal-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+
+        .principal-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .card-luke { border-left: 4px solid var(--navy); }
+        .card-bodie { border-left: 4px solid var(--yellow); }
+        .card-pablo { border-left: 4px solid var(--teal); }
+
+        .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        .bg-navy-dim { background: rgba(4, 76, 115, 0.2); color: #5B8FA6; }
+        .bg-yellow-dim { background: rgba(255, 230, 109, 0.2); color: var(--yellow); }
+        .bg-teal-dim { background: rgba(141, 182, 176, 0.2); color: var(--teal); }
+
+        .share-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 24px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .text-navy { color: #5B8FA6; }
+        .text-yellow { color: var(--yellow); }
+        .text-teal { color: var(--teal); }
+
+        /* Insight Box */
+        .insight-box {
+            margin-top: 24px;
+            background: rgba(239, 99, 55, 0.1);
+            border: 1px solid rgba(239, 99, 55, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .equation-visual {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 border-b border-[#044c73] pb-4">
+<div>
+<div class="flex items-center mb-2">
+<span class="w-2 h-2 bg-[#ef6337] rounded-full mr-2"></span>
+<p class="text-[#ef6337] font-bold tracking-widest text-xs uppercase">Chapter 4: Design-Build Expansion</p>
+</div>
+<h1 class="font-serif text-4xl text-[#f5f7fa]">THREE-WAY SPLIT: 40/30/30</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">SCENARIO C STRUCTURE</p>
+</div>
+</div>
+<!-- Content -->
+<div class="content-grid">
+<!-- Left: Chart -->
+<div class="chart-container">
+<canvas id="splitChart" width="1250" height="1000" style="display: block; box-sizing: border-box; height: 400px; width: 500px;"></canvas>
+<div class="center-text">
+<p class="text-[#f5f7fa] font-serif text-4xl font-bold">NEW</p>
+<p class="text-[#b0b8c1] text-xs uppercase tracking-widest">Entity</p>
+</div>
+</div>
+<!-- Right: Details -->
+<div class="flex flex-col h-full justify-center">
+<div class="cards-container">
+<!-- Luke -->
+<div class="principal-card card-luke">
+<div class="flex items-center">
+<div class="icon-wrapper bg-navy-dim">
+<i class="fas fa-pen-nib"></i>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg">Luke Gonzalez</h3>
+<p class="text-[#b0b8c1] text-xs uppercase tracking-wide mt-1">Founder &amp; Design Lead</p>
+</div>
+</div>
+<div class="text-right">
+<div class="share-pill text-navy bg-[#044c73] bg-opacity-10">40%</div>
+<p class="text-[#b0b8c1] text-[10px] mt-1">Largest Shareholder</p>
+</div>
+</div>
+<!-- Bodie -->
+<div class="principal-card card-bodie">
+<div class="flex items-center">
+<div class="icon-wrapper bg-yellow-dim">
+<i class="fas fa-user-tie"></i>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg">Bodie Arugula</h3>
+<p class="text-[#b0b8c1] text-xs uppercase tracking-wide mt-1">Principal &amp; Succession Lead</p>
+</div>
+</div>
+<div class="text-right">
+<div class="share-pill text-yellow bg-[#FFE66D] bg-opacity-10">30%</div>
+</div>
+</div>
+<!-- Pablo -->
+<div class="principal-card card-pablo">
+<div class="flex items-center">
+<div class="icon-wrapper bg-teal-dim">
+<i class="fas fa-hard-hat"></i>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg">Pablo (New Partner)</h3>
+<p class="text-[#b0b8c1] text-xs uppercase tracking-wide mt-1">Principal &amp; Construction Lead</p>
+</div>
+</div>
+<div class="text-right">
+<div class="share-pill text-teal bg-[#8db6b0] bg-opacity-10">30%</div>
+</div>
+</div>
+</div>
+<!-- Control Insight -->
+<div class="insight-box">
+<div class="flex justify-between items-start">
+<div>
+<div class="equation-visual">
+<span class="text-[#FFE66D]">30%</span>
+<span class="text-[#b0b8c1]">+</span>
+<span class="text-[#8db6b0]">30%</span>
+<span class="text-[#b0b8c1]">=</span>
+<span class="text-[#ef6337]">60% CONTROL</span>
+</div>
+<p class="text-[#f5f7fa] text-sm font-medium mb-1">Combined Operating Majority</p>
+<p class="text-[#b0b8c1] text-xs leading-relaxed">
+                                While Luke remains the largest individual shareholder (40%), Bodie and Pablo together hold the operating majority, ensuring the next generation drives daily decisions.
+                            </p>
+</div>
+<i class="fas fa-users-cog text-[#ef6337] text-2xl opacity-50"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-auto pt-4 border-t border-[#044c73] border-opacity-30 flex justify-between items-center">
+<p class="text-[#4e5d6c] text-xs tracking-widest uppercase">Confidential · MARPA Equity Pathway 2026</p>
+<p class="text-[#4e5d6c] text-xs font-mono">CH4-S07</p>
+</div>
+</div>
+<script>
+        const ctx = document.getElementById('splitChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Luke (Design)', 'Bodie (Succession)', 'Pablo (Build)'],
+                datasets: [{
+                    data: [40, 30, 30],
+                    backgroundColor: [
+                        '#044c73', // Navy
+                        '#FFE66D', // Yellow
+                        '#8db6b0'  // Teal
+                    ],
+                    borderWidth: 4,
+                    borderColor: '#0f1419',
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 20, 25, 0.95)',
+                        titleColor: '#f5f7fa',
+                        bodyColor: '#b0b8c1',
+                        padding: 12,
+                        borderColor: 'rgba(255,255,255,0.1)',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: (context) => ` ${context.label}: ${context.raw}%`
+                        }
+                    }
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    </script>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28a91e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDnhpO%2F5Vzzsm1WHEtkkYfP3Grts8dfdBcLl%2FJTynpVKuRCTine3BnsbW8KSxfPqKpgIBVjw0RrLUfxR7%2Bzp1r77eSAZjDz0VYKrv6e3StrqJPbKhLL6XPdiY1LCESRPR7751GEiS0ht4rh1Fc0R29AMoytz9wjj%2FNlEzRDonPtVK26OZFf%2B68iw3xuAL5dLAZukRUcrEDY0ewhPg3azXbKxTzGFq0c8IndDNMmsSlA9gNJ6PA3z3SzG00xWRBPjBV%2F2P7EVFz8BTT4GJZH434QwWYslTc1RC9GcWmVhPXvx%2FjTaVCB4AZdfuV55dHIM34S9dM0g%2FTHvdxf%2BOVQgYP%2Brk%2FE7uJ6SEW8uXTo0KJHEwQrk9end3KuNcvp7ZCDokjyoHUPYdGIj6AuA7zrfL9FskHIlZy67oAAMyjAWHqAWaspaN6HDVQeuCS%2Ba5ossjL%2FSo7EOb7SxVz9PTWxYujnRGHmGsFS9Qa0QbY4jRfO%2BIcxEGOGVwJ5DSz7JfOz23LTSgOw%2FyL6Qa7qn2QH7%2BiwGtlqlyWzUw5g5IZ1zNuqIUx6FV%2F%2Fpta%2FNrjU1E3OdbvJdcgxj784VWJKUuIArgezSVKX0br6nE6yFmh%2FcRqX6gyRzgCb6B%2FVhWq3L5Zm0Xmyd5s5tWLWLZN5TjY3vphRRz3gN8JkkyCD6KGB6niqzia3sGdqNlEEOZWfRezMyTW1WlG%2FBXzDe7CyJEAbk1hXlGTF4l5lBp9cTfh8TnWEjy";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDnhpO/5Vzzsm1WHEtkkYfP3Grts8dfdBcLl/JTynpVKuRCTine3BnsbW8KSxfPqKpgIBVjw0RrLUfxR7+zp1r77eSAZjDz0VYKrv6e3StrqJPbKhLL6XPdiY1LCESRPR7751GEiS0ht4rh1Fc0R29AMoytz9wjj/NlEzRDonPtVK26OZFf+68iw3xuAL5dLAZukRUcrEDY0ewhPg3azXbKxTzGFq0c8IndDNMmsSlA9gNJ6PA3z3SzG00xWRBPjBV/2P7EVFz8BTT4GJZH434QwWYslTc1RC9GcWmVhPXvx/jTaVCB4AZdfuV55dHIM34S9dM0g/THvdxf+OVQgYP+rk/E7uJ6SEW8uXTo0KJHEwQrk9end3KuNcvp7ZCDokjyoHUPYdGIj6AuA7zrfL9FskHIlZy67oAAMyjAWHqAWaspaN6HDVQeuCS+a5ossjL/So7EOb7SxVz9PTWxYujnRGHmGsFS9Qa0QbY4jRfO+IcxEGOGVwJ5DSz7JfOz23LTSgOw/yL6Qa7qn2QH7+iwGtlqlyWzUw5g5IZ1zNuqIUx6FV//pta/NrjU1E3OdbvJdcgxj784VWJKUuIArgezSVKX0br6nE6yFmh/cRqX6gyRzgCb6B/VhWq3L5Zm0Xmyd5s5tWLWLZN5TjY3vphRRz3gN8JkkyCD6KGB6niqzia3sGdqNlEEOZWfRezMyTW1WlG/BXzDe7CyJEAbk1hXlGTF4l5lBp9cTfh8TnWEjy";
+    </script>
+    </body></html>

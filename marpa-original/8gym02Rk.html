@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/8gym02Rk -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Transition - The Bigger Opportunity</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(7)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* SVG Path Animation */
+        .path-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .benefit-card {
+            background-color: rgba(239, 99, 55, 0.1);
+            border: 1px solid rgba(239, 99, 55, 0.3);
+            border-left: 4px solid var(--coral);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:last-child { margin-bottom: 0; }
+        
+        .icon-box {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(239, 99, 55, 0.2);
+            color: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 40% 20% 40%;
+            height: 100%;
+            align-items: center;
+        }
+
+        .question-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .quote-decoration {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: var(--coral);
+            opacity: 0.1;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            z-index: -1;
+        }
+        
+        /* Text styling updates for this specific slide content */
+        .card-title {
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 border-b border-[#044c73] border-opacity-50 pb-4 z-20">
+<div>
+<p class="text-[#ef6337] font-bold tracking-widest text-xs mb-1 uppercase">Chapter 4: Design-Build Expansion</p>
+<h1 class="font-serif text-3xl text-[#f5f7fa]">THE BIGGER OPPORTUNITY</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">SCENARIO C</p>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 grid-layout relative">
+<!-- Column 1: The Question -->
+<div class="question-wrapper pr-8">
+<div class="quote-decoration">?</div>
+<h2 class="text-[#ef6337] font-serif italic text-4xl leading-tight mb-6">
+                    "What if MARPA could capture construction margins, not just design fees?"
+                </h2>
+<div class="border-l-2 border-[#8db6b0] pl-6 py-2">
+<p class="text-[#b0b8c1] text-lg leading-relaxed">
+                        Instead of handing off profits to contractors, design-build allows MARPA to own the entire value chain.
+                    </p>
+</div>
+</div>
+<!-- Column 2: Visual Connection (SVG Merger) -->
+<div class="relative h-full w-full flex items-center justify-center">
+<svg class="path-visual" preserveAspectRatio="xMidYMid meet" viewBox="0 0 300 600">
+<!-- Path Design -->
+<path d="M50,180 C150,180 150,300 200,300" fill="none" stroke="#8db6b0" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Path Construction -->
+<path d="M50,420 C150,420 150,300 200,300" fill="none" stroke="#FFE66D" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Output Path -->
+<path d="M200,300 H260" fill="none" stroke="#ef6337" stroke-width="4"></path>
+<!-- Circle: Design -->
+<circle cx="50" cy="180" fill="#0f1419" r="30" stroke="#8db6b0" stroke-width="3"></circle>
+<text fill="#8db6b0" font-family="Inter" font-size="10" font-weight="bold" text-anchor="middle" x="50" y="184">DESIGN</text>
+<!-- Circle: Construction -->
+<circle cx="50" cy="420" fill="#0f1419" r="30" stroke="#FFE66D" stroke-width="3"></circle>
+<text fill="#FFE66D" font-family="Inter" font-size="10" font-weight="bold" text-anchor="middle" x="50" y="424">BUILD</text>
+<!-- Circle: Merged -->
+<circle cx="240" cy="300" fill="#ef6337" r="45"></circle>
+<text fill="#fff" font-family="Inter" font-size="12" font-weight="bold" text-anchor="middle" x="240" y="305">MARPA+</text>
+</svg>
+</div>
+<!-- Column 3: The Benefits (Design-Build) -->
+<div class="pl-4 flex flex-col justify-center h-full py-2">
+<p class="text-[#f5f7fa] font-bold uppercase tracking-widest text-xs mb-4 pl-1">The Design-Build Opportunity:</p>
+<!-- Benefit 1 -->
+<div class="benefit-card">
+<div class="flex items-start">
+<div class="icon-box">
+<i class="fas fa-layer-group"></i>
+</div>
+<div>
+<h3 class="card-title">Vertical Integration</h3>
+<p class="card-desc">Capture higher margins across the full project lifecycle.</p>
+</div>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="benefit-card">
+<div class="flex items-start">
+<div class="icon-box">
+<i class="fas fa-chart-line"></i>
+</div>
+<div>
+<h3 class="card-title">+20% EBITDA Impact</h3>
+<p class="card-desc">Construction adds significant profit on top of design fees.</p>
+</div>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="benefit-card">
+<div class="flex items-start">
+<div class="icon-box">
+<i class="fas fa-rocket"></i>
+</div>
+<div>
+<h3 class="card-title">Entity Synergy</h3>
+<p class="card-desc">Combined entity value is greater than the sum of parts.</p>
+</div>
+</div>
+</div>
+<!-- Benefit 4 -->
+<div class="benefit-card" style="border-left-color: #FFE66D;">
+<div class="flex items-start">
+<div class="icon-box" style="color: #FFE66D; background-color: rgba(255, 230, 109, 0.2);">
+<i class="fas fa-hand-holding-dollar"></i>
+</div>
+<div>
+<h3 class="card-title" style="color: #FFE66D;">Luke's Exit Value</h3>
+<p class="card-desc">Luke earns significantly more in this scenario.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Prompt -->
+<div class="mt-auto pt-6 flex justify-between items-center">
+<div class="flex items-center text-[#ef6337]">
+<i class="fas fa-arrow-right mr-3"></i>
+<p class="text-sm italic font-serif">This is the path where Luke makes MORE money, not less.</p>
+</div>
+<p class="text-[#4e5d6c] text-[10px] uppercase tracking-widest">Confidential Presentation</p>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28a11e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDj%2FtiD8nhAizGekz1gK87k7nwPzrtmk9OXcKW6yHVmgDkJ0FYheWY4SWxRUocNjfiOsV8%2BMmQyyzbPP1N2Dc6vk9oeamEdwVeANAShW7CAVEyOA%2BDmS7Y91cBT0HScrAp53Lt%2Ff1OW7fuSz7DosDpX1esgu3rwGQeTrvDnsZdXSkBEbAmJl9EUn5yttMUvUFYwtX5zQNh2oAGA%2FUeojiVwJ72sQE1LlR70%2BSws6MHaRhzpWy%2FVtirRMrYUYnEWoRMSXy6hQQ%2F1X%2FW2O%2BA9ReSU8oMZwtfQ5H54iNFeB8NK86cH4f0CVlfWpBQJuaO0tquVjd4HhxrqXKbePKC4aA0U6CYHFVRuIf67nA3f23uRZvlhE8v30J94Bo17jbIH5eNeDFk2jt%2F5AF2ScXBz%2FxmG2ad3xcwohoXW3A1C5U9D9RyitF42xmnl3dCFklTX4YdXJFblAmOCEvgm5vCaI%2Bu%2BYSRGO%2BoSF6QdvyAitlJrWf%2FKOPEvYzboAFYZ4m7k1ifUqwa8FJW%2BqJL%2FFdotT5WLvXWLFjYy%2FAHh%2BSocp1PsU2X6J7KZpYhISZhi6Zhbq5s5RUhHRX6IUKW86HXENu7iZYdtcRwk7EluFfsLW08%2BHfgARKb%2BjT%2F1%2FTA14LgykVGaSUqZDc7IrAO3dCSyr1GH9jlcDKeQKO39HD%2BoDsQjDvkhYh6hBMFpcctkqvD1DHklGZCcfYwdJCDF7YxeKjFRm%2ByyR571SIOz7M%2BvBfydAr";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDj/tiD8nhAizGekz1gK87k7nwPzrtmk9OXcKW6yHVmgDkJ0FYheWY4SWxRUocNjfiOsV8+MmQyyzbPP1N2Dc6vk9oeamEdwVeANAShW7CAVEyOA+DmS7Y91cBT0HScrAp53Lt/f1OW7fuSz7DosDpX1esgu3rwGQeTrvDnsZdXSkBEbAmJl9EUn5yttMUvUFYwtX5zQNh2oAGA/UeojiVwJ72sQE1LlR70+Sws6MHaRhzpWy/VtirRMrYUYnEWoRMSXy6hQQ/1X/W2O+A9ReSU8oMZwtfQ5H54iNFeB8NK86cH4f0CVlfWpBQJuaO0tquVjd4HhxrqXKbePKC4aA0U6CYHFVRuIf67nA3f23uRZvlhE8v30J94Bo17jbIH5eNeDFk2jt/5AF2ScXBz/xmG2ad3xcwohoXW3A1C5U9D9RyitF42xmnl3dCFklTX4YdXJFblAmOCEvgm5vCaI+u+YSRGO+oSF6QdvyAitlJrWf/KOPEvYzboAFYZ4m7k1ifUqwa8FJW+qJL/FdotT5WLvXWLFjYy/AHh+Socp1PsU2X6J7KZpYhISZhi6Zhbq5s5RUhHRX6IUKW86HXENu7iZYdtcRwk7EluFfsLW08+HfgARKb+jT/1/TA14LgykVGaSUqZDc7IrAO3dCSyr1GH9jlcDKeQKO39HD+oDsQjDvkhYh6hBMFpcctkqvD1DHklGZCcfYwdJCDF7YxeKjFRm+yyR571SIOz7M+vBfydAr";
+    </script>
+    </body></html>

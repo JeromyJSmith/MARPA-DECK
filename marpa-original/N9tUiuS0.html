@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/N9tUiuS0 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Your Next 90 Days by Path</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(5)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --turquoise: #4ECDC4;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* Main Grid Layout */
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            flex: 1;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Path Column Card */
+        .path-column {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .path-column:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Color Themes */
+        .theme-solo { border-top: 6px solid var(--turquoise); }
+        .theme-shared { border-top: 6px solid var(--yellow); }
+        .theme-db { border-top: 6px solid var(--coral); }
+
+        /* Header Section */
+        .column-header {
+            padding: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .path-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .theme-solo .path-badge { background: rgba(78, 205, 196, 0.15); color: var(--turquoise); }
+        .theme-shared .path-badge { background: rgba(255, 230, 109, 0.15); color: var(--yellow); }
+        .theme-db .path-badge { background: rgba(239, 99, 55, 0.15); color: var(--coral); }
+
+        .path-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .path-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            opacity: 0.2;
+        }
+
+        .theme-solo .path-icon { color: var(--turquoise); }
+        .theme-shared .path-icon { color: var(--yellow); }
+        .theme-db .path-icon { color: var(--coral); }
+
+        /* Action List */
+        .action-list {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .checkbox-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-solo .checkbox-custom { border-color: var(--turquoise); color: var(--turquoise); }
+        .theme-shared .checkbox-custom { border-color: var(--yellow); color: var(--yellow); }
+        .theme-db .checkbox-custom { border-color: var(--coral); color: var(--coral); }
+
+        .checkbox-custom i {
+            font-size: 12px;
+            opacity: 0; /* Unchecked state visual */
+        }
+
+        .action-text {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .action-item:hover .action-text {
+            color: var(--text-light);
+        }
+
+        /* Background Accents */
+        .bg-accent {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .theme-solo .bg-accent { background: radial-gradient(circle at bottom right, var(--turquoise), transparent 70%); }
+        .theme-shared .bg-accent { background: radial-gradient(circle at bottom right, var(--yellow), transparent 70%); }
+        .theme-db .bg-accent { background: radial-gradient(circle at bottom right, var(--coral), transparent 70%); }
+
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-6 border-b border-[#044c73] pb-4">
+<div>
+<div class="flex items-center mb-2">
+<span class="w-2 h-2 bg-[#95E1D3] rounded-full mr-2"></span>
+<p class="text-[#95E1D3] font-bold tracking-widest text-xs uppercase">Chapter 5: Decision &amp; Next Steps</p>
+</div>
+<h1 class="font-serif text-4xl text-[#f5f7fa]">YOUR NEXT 90 DAYS BY PATH</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">EXECUTION ROADMAP</p>
+</div>
+</div>
+<!-- Main Grid -->
+<div class="paths-grid">
+<!-- Column 1: SOLO -->
+<div class="path-column theme-solo">
+<div class="bg-accent"></div>
+<div class="column-header">
+<span class="path-badge">PATH A</span>
+<h3 class="path-title">Solo Principal</h3>
+<i class="fas fa-user path-icon"></i>
+</div>
+<div class="action-list">
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Review all pricing scenarios against personal capital reserves</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Model personal cash flow needs for first 24 months</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Engage SBA lender for individual pre-qualification</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Discuss full financial liability implications with family</p>
+</div>
+</div>
+</div>
+<!-- Column 2: SHARED -->
+<div class="path-column theme-shared">
+<div class="bg-accent"></div>
+<div class="column-header">
+<span class="path-badge">PATH B</span>
+<h3 class="path-title">Shared Principals</h3>
+<i class="fas fa-users path-icon"></i>
+</div>
+<div class="action-list">
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Identify potential junior principals for minority stakes</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Define governance structure &amp; voting rights tiers</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Draft preliminary multi-member Operating Agreement</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Assess cultural fit and long-term alignment of group</p>
+</div>
+</div>
+</div>
+<!-- Column 3: DESIGN-BUILD -->
+<div class="path-column theme-db">
+<div class="bg-accent"></div>
+<div class="column-header">
+<span class="path-badge">PATH C</span>
+<h3 class="path-title">Design-Build</h3>
+<i class="fas fa-layer-group path-icon"></i>
+</div>
+<div class="action-list">
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Meet with Pablo to formally kick off partnership discussions</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Conduct financial and operational due diligence</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Draft Integration Term Sheet for combined entity</p>
+</div>
+<div class="action-item">
+<div class="checkbox-custom"><i class="fas fa-check"></i></div>
+<p class="action-text">Define 40/30/30 mechanics and "divorce" provisions</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-auto pt-4 border-t border-[#044c73] border-opacity-30 flex justify-between items-center">
+<div class="flex items-center">
+<i class="fas fa-info-circle text-[#b0b8c1] mr-2 text-xs"></i>
+<p class="text-[#b0b8c1] text-xs">Action items specific to the chosen direction</p>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-[#4e5d6c] text-xs tracking-widest uppercase">Confidential · MARPA Equity Pathway 2026</p>
+<p class="text-[#4e5d6c] text-xs font-mono">CH5-S08</p>
+</div>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b38be1e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDomFdlJK8658siJHMulPlr%2FpeU6Ix0%2B1fOEgEedQNRsW5VXXYH6ZqedLn6bdzqelF4DAOeqUMA%2FJlzHT56nmH9UhsZwEb%2F6pA0wIUh4L4NLKaB4cDHFD8fa4T2QoAHMAyVPmrmX0FL3Rku%2FONspWWAdyPFayRldi1AdDueiSsF18Gz2EefoDJCBAJ8bFZF%2FA6Dbl3iohPK9lSKxJS%2B2aU1loFSx0NW%2Fel%2FoV5%2B8W%2Fqr9hDlbB4O5to9Jj5bt5czO16KakooMEp5hJmlMj3N1nPpbzAByKYynM5s%2FB%2FHiWYqSrhjFkBvx5omZ%2BR%2F6OvCfDG%2Fo%2BkTH4M54FqWpdG9Sbdc6xAIaL2arWblNP2X5O3pG%2FBiIZGkazPI%2F7vRGxKOgDj3TklhWR1U5elLW6gHnFJ8CrRS7Y8pMav13wfEvdYfmOjzTxe%2BdqJV8aENM1Th3KcekbOyaFEirLBpwkRA8bOPyRUFLglMD4De6u%2FDt4UMydmPS4%2FktJ71ymS%2BmJ1xwvbXzS8jMFVsuos2tQg0pKjLZ3B41zezc1uf9Wd3GqVma%2B%2FBDXv5sN4V141Hz8Wdtb1R8tkC932WXgmFyanmkNQwQMIe2f4g3BEEmpBBkLEQ7tgTHmXVaDuvMSXKY5x%2BC3ilBqfAl5wA3BBrBVkcpvcpH0T0FPUWS204QbzVvX3WQu3lrf3lQwouKA3Prp8psr%2BRTsaOMKTOwqCK7RsnAXBEkCiR%2FR3tW6tp16a8Nag9v";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDomFdlJK8658siJHMulPlr/peU6Ix0+1fOEgEedQNRsW5VXXYH6ZqedLn6bdzqelF4DAOeqUMA/JlzHT56nmH9UhsZwEb/6pA0wIUh4L4NLKaB4cDHFD8fa4T2QoAHMAyVPmrmX0FL3Rku/ONspWWAdyPFayRldi1AdDueiSsF18Gz2EefoDJCBAJ8bFZF/A6Dbl3iohPK9lSKxJS+2aU1loFSx0NW/el/oV5+8W/qr9hDlbB4O5to9Jj5bt5czO16KakooMEp5hJmlMj3N1nPpbzAByKYynM5s/B/HiWYqSrhjFkBvx5omZ+R/6OvCfDG/o+kTH4M54FqWpdG9Sbdc6xAIaL2arWblNP2X5O3pG/BiIZGkazPI/7vRGxKOgDj3TklhWR1U5elLW6gHnFJ8CrRS7Y8pMav13wfEvdYfmOjzTxe+dqJV8aENM1Th3KcekbOyaFEirLBpwkRA8bOPyRUFLglMD4De6u/Dt4UMydmPS4/ktJ71ymS+mJ1xwvbXzS8jMFVsuos2tQg0pKjLZ3B41zezc1uf9Wd3GqVma+/BDXv5sN4V141Hz8Wdtb1R8tkC932WXgmFyanmkNQwQMIe2f4g3BEEmpBBkLEQ7tgTHmXVaDuvMSXKY5x+C3ilBqfAl5wA3BBrBVkcpvcpH0T0FPUWS204QbzVvX3WQu3lrf3lQwouKA3Prp8psr+RTsaOMKTOwqCK7RsnAXBEkCiR/R3tW6tp16a8Nag9v";
+    </script>
+    </body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/uEWrOAyo -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MARPA Operational Strengths Scorecard</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(2)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --bg-card: #151a21;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        .score-card {
+            background-color: rgba(4, 76, 115, 0.1);
+            border: 1px solid rgba(4, 76, 115, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .score-card:hover {
+            transform: translateY(-2px);
+            background-color: rgba(4, 76, 115, 0.2);
+            border-color: rgba(4, 76, 115, 0.6);
+        }
+
+        .score-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+            background-color: #2c3540; /* Empty state */
+        }
+
+        /* Score Colors */
+        .score-5 .filled { background-color: var(--coral); box-shadow: 0 0 8px rgba(239, 99, 55, 0.4); }
+        .score-4 .filled { background-color: var(--yellow); box-shadow: 0 0 8px rgba(255, 230, 109, 0.4); }
+        .score-3 .filled { background-color: var(--teal); box-shadow: 0 0 8px rgba(141, 182, 176, 0.4); }
+
+        .border-left-accent { border-left-width: 4px; }
+        .border-coral { border-left-color: var(--coral); }
+        .border-yellow { border-left-color: var(--yellow); }
+        .border-teal { border-left-color: var(--teal); }
+
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 border-b border-[#044c73] border-opacity-30 pb-4">
+<div>
+<p class="text-[#ef6337] font-bold tracking-widest text-xs mb-1 uppercase">Chapter 1: Valuation Foundation</p>
+<h1 class="font-serif text-4xl text-[#f5f7fa] tracking-tight">MARPA'S OPERATIONAL STRENGTHS</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-xs font-mono">ASSESSMENT DATE: DEC 2024</p>
+<p class="text-[#8db6b0] text-sm font-bold">SCORECARD SUMMARY</p>
+</div>
+</div>
+<!-- Main Grid Content -->
+<div class="flex-1 grid grid-cols-3 gap-6 mb-4">
+<!-- Card 1: Client Concentration -->
+<div class="score-card rounded-lg p-6 flex flex-col justify-between border-left-accent border-yellow score-4">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-[#044c73] bg-opacity-20 flex items-center justify-center text-[#FFE66D]">
+<i class="fas fa-users"></i>
+</div>
+<div class="text-right">
+<p class="text-3xl font-bold font-mono text-[#FFE66D]">4<span class="text-lg text-[#b0b8c1] font-normal">/5</span></p>
+</div>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Client Concentration</h3>
+<p class="text-[#b0b8c1] text-sm mb-4">Diversified client base</p>
+<div class="flex mt-2">
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: Pricing Power -->
+<div class="score-card rounded-lg p-6 flex flex-col justify-between border-left-accent border-coral score-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-[#044c73] bg-opacity-20 flex items-center justify-center text-[#ef6337]">
+<i class="fas fa-tag"></i>
+</div>
+<div class="text-right">
+<p class="text-3xl font-bold font-mono text-[#ef6337]">5<span class="text-lg text-[#b0b8c1] font-normal">/5</span></p>
+</div>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Pricing Power</h3>
+<p class="text-[#b0b8c1] text-sm mb-4">Premium positioning</p>
+<div class="flex mt-2">
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: Revenue Predictability -->
+<div class="score-card rounded-lg p-6 flex flex-col justify-between border-left-accent border-yellow score-4">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-[#044c73] bg-opacity-20 flex items-center justify-center text-[#FFE66D]">
+<i class="fas fa-chart-line"></i>
+</div>
+<div class="text-right">
+<p class="text-3xl font-bold font-mono text-[#FFE66D]">4<span class="text-lg text-[#b0b8c1] font-normal">/5</span></p>
+</div>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Revenue Predictability</h3>
+<p class="text-[#b0b8c1] text-sm mb-4">Strong pipeline visibility</p>
+<div class="flex mt-2">
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Market Position -->
+<div class="score-card rounded-lg p-6 flex flex-col justify-between border-left-accent border-coral score-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-[#044c73] bg-opacity-20 flex items-center justify-center text-[#ef6337]">
+<i class="fas fa-crown"></i>
+</div>
+<div class="text-right">
+<p class="text-3xl font-bold font-mono text-[#ef6337]">5<span class="text-lg text-[#b0b8c1] font-normal">/5</span></p>
+</div>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Market Position</h3>
+<p class="text-[#b0b8c1] text-sm mb-4">Leading regional presence</p>
+<div class="flex mt-2">
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+</div>
+</div>
+</div>
+<!-- Card 5: Team Depth -->
+<div class="score-card rounded-lg p-6 flex flex-col justify-between border-left-accent border-teal score-3">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-[#044c73] bg-opacity-20 flex items-center justify-center text-[#8db6b0]">
+<i class="fas fa-user-shield"></i>
+</div>
+<div class="text-right">
+<p class="text-3xl font-bold font-mono text-[#8db6b0]">3<span class="text-lg text-[#b0b8c1] font-normal">/5</span></p>
+</div>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Team Depth</h3>
+<p class="text-[#b0b8c1] text-sm mb-4 flex items-center"><i class="fas fa-exclamation-circle mr-2 text-[#8db6b0]"></i> Key-person risk exists</p>
+<div class="flex mt-2">
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot"></div>
+<div class="score-dot"></div>
+</div>
+</div>
+</div>
+<!-- Card 6: Growth Potential -->
+<div class="score-card rounded-lg p-6 flex flex-col justify-between border-left-accent border-yellow score-4">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded bg-[#044c73] bg-opacity-20 flex items-center justify-center text-[#FFE66D]">
+<i class="fas fa-rocket"></i>
+</div>
+<div class="text-right">
+<p class="text-3xl font-bold font-mono text-[#FFE66D]">4<span class="text-lg text-[#b0b8c1] font-normal">/5</span></p>
+</div>
+</div>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Growth Potential</h3>
+<p class="text-[#b0b8c1] text-sm mb-4">Design-build expansion</p>
+<div class="flex mt-2">
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot filled"></div>
+<div class="score-dot"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Insight Footer -->
+<div class="mt-auto bg-[#044c73] bg-opacity-10 rounded border border-[#044c73] p-4 flex items-center">
+<i class="fas fa-lightbulb text-[#8db6b0] mr-4 text-xl"></i>
+<div>
+<p class="text-[#f5f7fa] text-sm font-medium">Why Team Depth is only 3/5:</p>
+<p class="text-[#b0b8c1] text-xs">Current reliance on founder for sales and design creates key-person risk. This is exactly why the succession plan is critical—it turns that 3 into a 5.</p>
+</div>
+</div>
+<!-- Confidential Footer -->
+<div class="absolute bottom-4 right-10 text-[#4e5d6c] text-[10px] uppercase tracking-widest">
+            Confidential · MARPA Equity Pathway 2026
+        </div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b187c1e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDiXY78yo8J0PzPbt8gW%2FcsbZQ0vcD%2FLPs%2FY0rifIVORVyZBoHxqcwo26DX3IV90ICtDh3eKS4%2F39a7VAt4YF9APGpk2SRepZKDhrlputnTm8NU8jbcHYatT0nUm84tmIdGgcA8KL5RhLEYAnXX7QWfgksiDw48rCREWiAtUdSssC0YFV4VuSdYCRFNYFEHihNOu16LqRoZfbJO96xNJCKKtmUfNojbIQkpbsxcsPBFoLwJ8xZ0OiG3TM0bQONRqxJR%2BFRjxgZCq8JWygqmkJkiJpmv1CFOGfdDkyrtujmwbBViCvIklrrt4Nv4WP8h7J19kSmNdsibtBboVi%2BgOBc%2F6NVsbXQ1qj70agCTijSRp59fIMqEGW5pyZ0YSva7p33ANSCzJMNW8o4WNu2Tie8m%2Bmpb0CQdhL4NZTzco%2B8SvVUhKMl%2BtUmF14%2FNT6ABMAHbiUX%2BBKO1mcSbkOV4jsyqFZAEMTspkn7C6xSqiNJJfjfy0OcANBV4SUdSR0cDi5MGgw%2FV5cSwoNHE7ky3efg1AMZ8pFgbXw0znYYgUclkLWJp%2BfIapEKEHG27MsfBoLGy%2FS2ZlCFcfhv4qPqZod%2BZIlrQN6YBF2WSc8YCbNJKiOAOO903HXL2%2FKWYgFdurKo6EMYFNFklpxRpg9uX9W5SNfy2pDAW5iK5R%2B%2FRNeJ1ioyZX0RMFKKbAKJs0KfDuBHaEw67Wzt6clT%2BHCDMqMq6CczizAxm9a3zPNTUcdNDA2";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDiXY78yo8J0PzPbt8gW/csbZQ0vcD/LPs/Y0rifIVORVyZBoHxqcwo26DX3IV90ICtDh3eKS4/39a7VAt4YF9APGpk2SRepZKDhrlputnTm8NU8jbcHYatT0nUm84tmIdGgcA8KL5RhLEYAnXX7QWfgksiDw48rCREWiAtUdSssC0YFV4VuSdYCRFNYFEHihNOu16LqRoZfbJO96xNJCKKtmUfNojbIQkpbsxcsPBFoLwJ8xZ0OiG3TM0bQONRqxJR+FRjxgZCq8JWygqmkJkiJpmv1CFOGfdDkyrtujmwbBViCvIklrrt4Nv4WP8h7J19kSmNdsibtBboVi+gOBc/6NVsbXQ1qj70agCTijSRp59fIMqEGW5pyZ0YSva7p33ANSCzJMNW8o4WNu2Tie8m+mpb0CQdhL4NZTzco+8SvVUhKMl+tUmF14/NT6ABMAHbiUX+BKO1mcSbkOV4jsyqFZAEMTspkn7C6xSqiNJJfjfy0OcANBV4SUdSR0cDi5MGgw/V5cSwoNHE7ky3efg1AMZ8pFgbXw0znYYgUclkLWJp+fIapEKEHG27MsfBoLGy/S2ZlCFcfhv4qPqZod+ZIlrQN6YBF2WSc8YCbNJKiOAOO903HXL2/KWYgFdurKo6EMYFNFklpxRpg9uX9W5SNfy2pDAW5iK5R+/RNeJ1ioyZX0RMFKKbAKJs0KfDuBHaEw67Wzt6clT+HCDMqMq6CczizAxm9a3zPNTUcdNDA2";
+    </script>
+    </body></html>

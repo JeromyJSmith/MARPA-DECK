@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/Yu74L1XV -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Transition - Question Recap</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(7)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* SVG Path Animation */
+        .path-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .benefit-card {
+            background-color: rgba(4, 76, 115, 0.15);
+            border: 1px solid rgba(4, 76, 115, 0.3);
+            border-left: 4px solid var(--yellow);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:last-child { margin-bottom: 0; }
+        
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 230, 109, 0.1);
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 40% 20% 40%;
+            height: 100%;
+            align-items: center;
+        }
+
+        .question-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .quote-decoration {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: var(--coral);
+            opacity: 0.1;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            z-index: -1;
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 border-b border-[#044c73] border-opacity-50 pb-4 z-20">
+<div>
+<p class="text-[#FFE66D] font-bold tracking-widest text-xs mb-1 uppercase">Chapter 3: Shared Leadership</p>
+<h1 class="font-serif text-3xl text-[#f5f7fa]">THE CRITICAL QUESTION</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">SCENARIO B</p>
+</div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 grid-layout relative">
+<!-- Column 1: The Question -->
+<div class="question-wrapper pr-8">
+<div class="quote-decoration">?</div>
+<h2 class="text-[#ef6337] font-serif italic text-5xl leading-tight mb-8">
+                    "What if Bodie doesn't go alone?"
+                </h2>
+<div class="border-l-2 border-[#044c73] pl-6 py-2">
+<p class="text-[#b0b8c1] text-lg leading-relaxed">
+                        Is 49% ownership worth carrying 100% of the financial risk? Or is there a way to share the load?
+                    </p>
+</div>
+</div>
+<!-- Column 2: Visual Connection (SVG) -->
+<div class="relative h-full w-full flex items-center justify-center">
+<svg class="path-visual" preserveAspectRatio="none" viewBox="0 0 300 600">
+<!-- Main path splitting -->
+<path d="M0,300 C100,300 100,100 200,100 H300" fill="none" opacity="0.6" stroke="#FFE66D" stroke-dasharray="8 4" stroke-width="2"></path>
+<path d="M0,300 C150,300 150,300 300,300" fill="none" stroke="#FFE66D" stroke-width="4"></path>
+<path d="M0,300 C100,300 100,500 200,500 H300" fill="none" opacity="0.6" stroke="#FFE66D" stroke-dasharray="8 4" stroke-width="2"></path>
+<!-- Nodes -->
+<circle cx="0" cy="300" fill="#ef6337" r="6"></circle>
+<circle cx="150" cy="300" fill="#FFE66D" r="4"></circle>
+<!-- End Points -->
+<circle cx="300" cy="100" fill="#FFE66D" r="4"></circle>
+<circle cx="300" cy="300" fill="#FFE66D" r="4"></circle>
+<circle cx="300" cy="500" fill="#FFE66D" r="4"></circle>
+</svg>
+</div>
+<!-- Column 3: The Benefits (Shared Path) -->
+<div class="pl-4 flex flex-col justify-center h-full py-4">
+<p class="text-[#f5f7fa] font-bold uppercase tracking-widest text-xs mb-6 pl-1">The Shared Path Offers:</p>
+<!-- Benefit 1 -->
+<div class="benefit-card">
+<div class="flex items-start">
+<i class="fas fa-shield-alt text-[#FFE66D] mt-1 mr-4 text-lg"></i>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Reduced Exposure</h3>
+<p class="text-[#b0b8c1] text-sm">Individual financial risk is distributed among partners.</p>
+</div>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="benefit-card">
+<div class="flex items-start">
+<i class="fas fa-users text-[#FFE66D] mt-1 mr-4 text-lg"></i>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Succession Depth</h3>
+<p class="text-[#b0b8c1] text-sm">Multiple principals ensure continuity beyond one person.</p>
+</div>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="benefit-card">
+<div class="flex items-start">
+<i class="fas fa-chart-pie text-[#FFE66D] mt-1 mr-4 text-lg"></i>
+<div>
+<h3 class="text-[#f5f7fa] font-bold text-lg mb-1">Adjusted Ownership</h3>
+<p class="text-[#b0b8c1] text-sm">Bodie takes 30-35% (vs 49%) in exchange for stability.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Prompt -->
+<div class="mt-auto pt-6 flex justify-between items-center">
+<div class="flex items-center text-[#8db6b0]">
+<i class="fas fa-arrow-right mr-3"></i>
+<p class="text-sm italic font-serif">Let's explore what this looks like...</p>
+</div>
+<p class="text-[#4e5d6c] text-[10px] uppercase tracking-widest">Confidential Presentation</p>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28981e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDuWHYQ6k5tDmuTYZXhxl9kUqPKB8xc6NKCfNNnsqwD7WmToD4OT9XV%2B%2Bk3yN%2B4rhxBJxA8r%2B7mNrtJJQG87oPjCVS4k1c0nu%2B98B6BHw6LflhSNhv%2BWPOMMWc1GOEs57DpIcYF0zuKptQMqSD4IFh8O3sToCvz%2BPuZX%2BBkn7VaACbF9f9s7c1uxQtuXiaBJlbNqzZSFcrQNdX5uF6Blyn51HgpIwcoAiahOE1DRmpseO%2BWTGWd6msSCkrSgDr5%2Bc%2BXbJbQ0LzRnEJvzBTz6ylG9Tki7hVub7NTV%2BuJBIkHepduFgUBHZ4ptrys5ex%2BOWUJQ9tXeozuX%2FxnEng5F5v4FL76cXkgALd%2BZPX5lkgWH7SA7zxY6UoeJ6%2FQQwhgXSSJUBHvKo0uVtu0TsHlalfjmKbeOzIieLsQZ72pSpG%2BoDEW7rNpRbPrbEBeMcc4%2FPYQvOx3RTXHoxIYof6JqVCxOFNIQlL42EaRk4FRef%2B6aAH0oyw6ly1rh4dthGlPtWjTTTfbI6ywbDcf%2FdJdrVo%2FrMaDcpkB0BCkOr3Z5aZDNVwiA%2FAbxjzvfxopw3gDP17HP4xtoUFUvBknFZFH7l%2BJN1dYi0aebAwts8HrBERHSiREFKMwBW2d4J7KbHvf8%2FBt7buinabwK78z1DPxtFGBTyoBeLL40uTY8gDRa9Dq8UiEay4i3YIcJO%2Bv5iq8QrDsM3rXqrAbmSBmvYPTEAradpbQYz38EIxyMqqSbJmVSv";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDuWHYQ6k5tDmuTYZXhxl9kUqPKB8xc6NKCfNNnsqwD7WmToD4OT9XV++k3yN+4rhxBJxA8r+7mNrtJJQG87oPjCVS4k1c0nu+98B6BHw6LflhSNhv+WPOMMWc1GOEs57DpIcYF0zuKptQMqSD4IFh8O3sToCvz+PuZX+Bkn7VaACbF9f9s7c1uxQtuXiaBJlbNqzZSFcrQNdX5uF6Blyn51HgpIwcoAiahOE1DRmpseO+WTGWd6msSCkrSgDr5+c+XbJbQ0LzRnEJvzBTz6ylG9Tki7hVub7NTV+uJBIkHepduFgUBHZ4ptrys5ex+OWUJQ9tXeozuX/xnEng5F5v4FL76cXkgALd+ZPX5lkgWH7SA7zxY6UoeJ6/QQwhgXSSJUBHvKo0uVtu0TsHlalfjmKbeOzIieLsQZ72pSpG+oDEW7rNpRbPrbEBeMcc4/PYQvOx3RTXHoxIYof6JqVCxOFNIQlL42EaRk4FRef+6aAH0oyw6ly1rh4dthGlPtWjTTTfbI6ywbDcf/dJdrVo/rMaDcpkB0BCkOr3Z5aZDNVwiA/Abxjzvfxopw3gDP17HP4xtoUFUvBknFZFH7l+JN1dYi0aebAwts8HrBERHSiREFKMwBW2d4J7KbHvf8/Bt7buinabwK78z1DPxtFGBTyoBeLL40uTY8gDRa9Dq8UiEay4i3YIcJO+v5iq8QrDsM3rXqrAbmSBmvYPTEAradpbQYz38EIxyMqqSbJmVSv";
+    </script>
+    </body></html>

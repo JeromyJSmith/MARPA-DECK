@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/HaNIwukc -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Why Design-Build Changes Everything</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(5)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<script src="./gsap.min.js"></script>
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        /* Chart Area */
+        .chart-container {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 40px 0 60px 0;
+            gap: 80px;
+            position: relative;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            width: 240px;
+            position: relative;
+        }
+
+        .bar {
+            width: 100%;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform-origin: bottom; /* Critical for scaling up animation */
+        }
+
+        .bar-teal {
+            background-color: rgba(141, 182, 176, 0.8);
+            border: 1px solid var(--teal);
+            height: 137px; /* Proportional to 1.1M */
+        }
+
+        .bar-coral {
+            background-color: var(--coral);
+            border: 1px solid #ff8a65;
+            height: 437px; /* Proportional to 3.53M approx 3.2x */
+            box-shadow: 0 0 30px rgba(239, 99, 55, 0.4);
+        }
+
+        /* Pulsing Glow Animation */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 20px rgba(239, 99, 55, 0.4); border-color: #ff8a65; }
+            50% { box-shadow: 0 0 50px rgba(239, 99, 55, 0.8); border-color: #ffffff; }
+            100% { box-shadow: 0 0 20px rgba(239, 99, 55, 0.4); border-color: #ff8a65; }
+        }
+
+        .pulsing-bar {
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+
+        .bar-label {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 42px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .bar-sublabel {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .axis-label {
+            text-align: center;
+            margin-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            width: 100%;
+            padding-top: 16px;
+        }
+
+        .delta-badge {
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 230, 109, 0.1);
+            border: 2px solid var(--yellow);
+            border-radius: 12px;
+            padding: 20px 30px;
+            text-align: center;
+            backdrop-filter: blur(4px);
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            opacity: 0; /* Hidden initially for animation */
+        }
+
+        /* Key Insight Box */
+        .insight-box {
+            position: absolute;
+            right: 0;
+            top: 20px;
+            width: 300px;
+            background: rgba(4, 76, 115, 0.3);
+            border-left: 4px solid var(--coral);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            transform: translateX(100%); /* Start off screen for animation */
+            opacity: 0;
+        }
+
+        /* Emotional Anchor */
+        .anchor-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(4, 76, 115, 0.3);
+            opacity: 0; /* Fade in last */
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        /* GSAP Animation Targets */
+        .animate-header { opacity: 0; transform: translateY(-10px); }
+        .animate-text { opacity: 0; }
+        
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-2">
+<div>
+<div class="flex items-center mb-2 animate-header" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<span class="w-2 h-2 bg-[#ef6337] rounded-full mr-2"></span>
+<p class="text-[#ef6337] font-bold tracking-widest text-xs uppercase">Chapter 4: Design-Build Expansion</p>
+</div>
+<h1 class="font-serif text-4xl text-[#f5f7fa] animate-header" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">WHY DESIGN-BUILD CHANGES EVERYTHING</h1>
+<p class="text-[#b0b8c1] text-sm mt-1 font-mono uppercase tracking-wider animate-header" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, -50%);">EBITDA Margin Impact Analysis ($11.03M Revenue Base)</p>
+</div>
+<div class="text-right animate-header" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, -50%);">
+<p class="text-[#b0b8c1] text-sm font-mono">CH4-S05</p>
+</div>
+</div>
+<!-- Main Content -->
+<div class="chart-container">
+<!-- Insight Overlay -->
+<div class="insight-box" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<p class="text-[#ef6337] font-bold text-xs uppercase tracking-widest mb-2">Key Insight</p>
+<p class="text-[#f5f7fa] text-sm leading-relaxed">
+                    This is the only path where Luke earns <span class="font-bold text-[#FFE66D]">more</span> than he gives up in profit share.
+                </p>
+</div>
+<!-- Bar 1: Design Only -->
+<div class="bar-group">
+<div class="bar bar-teal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+<p class="bar-label animate-text" style="opacity: 1;">$1.1M</p>
+<p class="bar-sublabel animate-text" style="opacity: 1;">10% Margin</p>
+</div>
+<div class="axis-label animate-text" style="opacity: 1;">
+<p class="text-[#f5f7fa] font-bold text-lg">Design-Only</p>
+<p class="text-[#b0b8c1] text-sm">Status Quo</p>
+</div>
+</div>
+<!-- Delta Badge -->
+<div class="delta-badge" style="translate: none; rotate: none; scale: none; transform: translate(0%, -50%) translate(-100.259px, 0px); opacity: 1;">
+<i class="fas fa-arrow-trend-up text-[#FFE66D] text-3xl mb-2"></i>
+<p class="text-[#f5f7fa] font-bold text-3xl mb-1">+$2.43M</p>
+<p class="text-[#FFE66D] font-mono text-sm uppercase tracking-widest">Annual Profit</p>
+<div class="w-full h-px bg-[#FFE66D] opacity-30 my-3"></div>
+<p class="text-[#b0b8c1] text-xs font-bold">+22 Margin Points</p>
+</div>
+<!-- Bar 2: Design Build -->
+<div class="bar-group">
+<div class="bar bar-coral pulsing-bar" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+<p class="bar-label animate-text" style="font-size: 56px; opacity: 1;">$3.53M</p>
+<p class="bar-sublabel animate-text" style="font-size: 22px; opacity: 1;">32% Margin</p>
+<div class="absolute -top-10 right-0 bg-[#FFE66D] text-[#0f1419] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider animate-text" style="opacity: 1;">
+                        Target State
+                    </div>
+</div>
+<div class="axis-label animate-text" style="opacity: 1;">
+<p class="text-[#ef6337] font-bold text-lg">Design-Build</p>
+<p class="text-[#b0b8c1] text-sm">Integrated Model</p>
+</div>
+</div>
+</div>
+<!-- Emotional Anchor -->
+<div class="anchor-container" style="opacity: 1;">
+<i class="fas fa-quote-left text-[#044c73] text-xl mr-4"></i>
+<p class="quote-text">"Feels like building a bigger machine together."</p>
+<i class="fas fa-quote-right text-[#044c73] text-xl ml-4"></i>
+</div>
+<!-- Footer -->
+<div class="absolute bottom-4 left-0 right-0 px-14 flex justify-between items-center pointer-events-none">
+<p class="text-[#4e5d6c] text-[10px] tracking-widest uppercase">Confidential · MARPA Equity Pathway 2026</p>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Timeline for coordinated entrance
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        // 1. Header Elements Fade In
+        tl.to(".animate-header", {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1
+        });
+
+        // 2. Bars Grow from Bottom (Dramatic Scale Effect)
+        tl.from(".bar", {
+            scaleY: 0,
+            duration: 1.2,
+            stagger: 0.3,
+            ease: "back.out(1.2)"
+        }, "-=0.4");
+
+        // 3. Text on Bars Fades In
+        tl.to(".animate-text", {
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1
+        }, "-=0.8");
+
+        // 4. Delta Badge Pops In
+        tl.to(".delta-badge", {
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "elastic.out(1, 0.5)",
+            startAt: { scale: 0.5 }
+        }, "-=0.2");
+
+        // 5. Insight Box Slides In from Right
+        tl.to(".insight-box", {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out"
+        }, "-=0.6");
+
+        // 6. Anchor Fades In
+        tl.to(".anchor-container", {
+            opacity: 1,
+            duration: 1
+        }, "-=0.4");
+    });
+</script>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28a51e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script></body></html>

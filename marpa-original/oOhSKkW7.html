@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/oOhSKkW7 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MARPA Financial Dashboard</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./all(1).min.css" rel="stylesheet">
+<link href="./css2(2)" rel="stylesheet">
+<script src="./gsap.min.js"></script>
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --card-bg: #161b22;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Custom Scrollbar for safety */
+        ::-webkit-scrollbar { width: 0px; }
+
+        .metric-row {
+            background-color: var(--card-bg);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            opacity: 0; /* Hidden initially for GSAP */
+            transform: translateX(-50px); /* Start off-screen */
+        }
+        .metric-row:hover {
+            transform: translateX(5px) !important; /* Override GSAP inline style on hover */
+            background-color: #1c232b;
+            border-left-color: var(--coral);
+        }
+
+        .progress-bar-bg {
+            background-color: rgba(141, 182, 176, 0.1);
+        }
+        .progress-bar-fill {
+            background-color: var(--teal);
+            width: 0%; /* Start at 0 for animation */
+        }
+        .progress-bar-fill.highlight {
+            background-color: var(--coral);
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container p-12 flex flex-col">
+<!-- Header -->
+<div class="flex justify-between items-end mb-8 header-section" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+<div>
+<h2 class="text-[#ef6337] font-bold tracking-widest text-sm mb-2 uppercase">Chapter 1: Valuation Foundation</h2>
+<h1 class="font-serif text-5xl font-bold text-[#f5f7fa]">MARPA'S FINANCIAL DASHBOARD</h1>
+</div>
+<div class="text-right">
+<div class="text-[#8db6b0] text-sm font-mono">DATA SOURCE: Q4 2024 REVIEW</div>
+<div class="w-32 h-1 bg-[#044c73] mt-2 ml-auto"></div>
+</div>
+</div>
+<!-- Main Content: Metrics Rows -->
+<div class="flex-1 flex flex-col justify-center space-y-4">
+<!-- Row 1: EBITDA -->
+<div class="metric-row rounded-r-lg p-5 flex items-center shadow-lg border-l-[#ef6337]" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<!-- Icon -->
+<div class="w-12 h-12 rounded-full bg-[#044c73] bg-opacity-20 flex items-center justify-center mr-6 flex-shrink-0">
+<i class="fas fa-chart-line text-[#ef6337] text-xl"></i>
+</div>
+<!-- Label & Context -->
+<div class="flex-1 pr-8">
+<h3 class="text-xl font-bold text-[#f5f7fa] mb-1">Trailing EBITDA</h3>
+<p class="text-[#8db6b0] text-sm">Base foundation for all valuation multiples</p>
+</div>
+<!-- Value -->
+<div class="w-48 text-right pr-8">
+<span class="text-3xl font-bold text-[#ef6337] font-mono">$1.655M</span>
+</div>
+<!-- Visual -->
+<div class="w-48 flex flex-col justify-center">
+<div class="flex justify-between text-xs text-[#b0b8c1] mb-1">
+<span>Strength</span>
+<span>High</span>
+</div>
+<div class="h-2 w-full progress-bar-bg rounded-full overflow-hidden">
+<div class="h-full progress-bar-fill highlight" data-width="95%" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+<!-- Row 2: Revenue -->
+<div class="metric-row rounded-r-lg p-4 flex items-center shadow-lg border-l-[#044c73]" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-12 h-12 rounded-full bg-[#044c73] bg-opacity-20 flex items-center justify-center mr-6 flex-shrink-0">
+<i class="fas fa-bullseye text-[#8db6b0] text-xl"></i>
+</div>
+<div class="flex-1 pr-8">
+<h3 class="text-lg font-bold text-[#f5f7fa] mb-1">Revenue Target (2025)</h3>
+<p class="text-[#b0b8c1] text-sm">Projected growth based on current pipeline</p>
+</div>
+<div class="w-48 text-right pr-8">
+<span class="text-2xl font-bold text-[#f5f7fa] font-mono">$11.03M</span>
+</div>
+<div class="w-48 flex flex-col justify-center">
+<div class="flex justify-between text-xs text-[#b0b8c1] mb-1">
+<span>Projection</span>
+<span>Solid</span>
+</div>
+<div class="h-2 w-full progress-bar-bg rounded-full overflow-hidden">
+<div class="h-full progress-bar-fill" data-width="80%" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<!-- Row 3: Pipeline -->
+<div class="metric-row rounded-r-lg p-4 flex items-center shadow-lg border-l-[#044c73]" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-12 h-12 rounded-full bg-[#044c73] bg-opacity-20 flex items-center justify-center mr-6 flex-shrink-0">
+<i class="fas fa-filter text-[#8db6b0] text-xl"></i>
+</div>
+<div class="flex-1 pr-8">
+<h3 class="text-lg font-bold text-[#f5f7fa] mb-1">Active Pipeline</h3>
+<p class="text-[#b0b8c1] text-sm flex items-center">
+<i class="fas fa-check-circle text-[#8db6b0] text-xs mr-2"></i> Corrected figure
+                </p>
+</div>
+<div class="w-48 text-right pr-8">
+<span class="text-2xl font-bold text-[#f5f7fa] font-mono">$5.5M</span>
+</div>
+<div class="w-48 flex flex-col justify-center">
+<div class="flex justify-between text-xs text-[#b0b8c1] mb-1">
+<span>Coverage</span>
+<span>52%</span>
+</div>
+<div class="h-2 w-full progress-bar-bg rounded-full overflow-hidden">
+<div class="h-full progress-bar-fill" data-width="52%" style="width: 52%;"></div>
+</div>
+</div>
+</div>
+<!-- Row 4: Project Size -->
+<div class="metric-row rounded-r-lg p-4 flex items-center shadow-lg border-l-[#FFE66D]" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-12 h-12 rounded-full bg-[#044c73] bg-opacity-20 flex items-center justify-center mr-6 flex-shrink-0">
+<i class="fas fa-ruler-combined text-[#FFE66D] text-xl"></i>
+</div>
+<div class="flex-1 pr-8">
+<div class="flex items-center">
+<h3 class="text-lg font-bold text-[#f5f7fa] mb-1 mr-3">Avg Project Size</h3>
+<span class="bg-[#FFE66D] text-[#0f1419] text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide flex items-center">
+<i class="fas fa-exclamation-triangle mr-1"></i> Verify
+                    </span>
+</div>
+<p class="text-[#b0b8c1] text-sm">Est. 3-5× industry standard ($75-150k)</p>
+</div>
+<div class="w-48 text-right pr-8">
+<span class="text-2xl font-bold text-[#f5f7fa] font-mono">~$500K</span>
+</div>
+<div class="w-48 flex flex-col justify-center">
+<div class="flex justify-between text-xs text-[#b0b8c1] mb-1">
+<span>Vs Industry</span>
+<span>Top 5%</span>
+</div>
+<div class="h-2 w-full progress-bar-bg rounded-full overflow-hidden">
+<div class="h-full progress-bar-fill" data-width="90%" style="background-color: rgb(255, 230, 109); width: 90%;"></div>
+</div>
+</div>
+</div>
+<!-- Row 5: Win Rate -->
+<div class="metric-row rounded-r-lg p-5 flex items-center shadow-lg border-l-[#ef6337]" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-12 h-12 rounded-full bg-[#044c73] bg-opacity-20 flex items-center justify-center mr-6 flex-shrink-0">
+<i class="fas fa-trophy text-[#ef6337] text-xl"></i>
+</div>
+<div class="flex-1 pr-8">
+<h3 class="text-xl font-bold text-[#f5f7fa] mb-1">Win Rate</h3>
+<p class="text-[#8db6b0] text-sm">Exceptional vs 40-50% industry average</p>
+</div>
+<div class="w-48 text-right pr-8">
+<span class="text-3xl font-bold text-[#ef6337] font-mono">90-95%</span>
+</div>
+<div class="w-48 flex flex-col justify-center">
+<div class="flex justify-between text-xs text-[#b0b8c1] mb-1">
+<span>Conversion</span>
+<span>Elite</span>
+</div>
+<div class="h-2 w-full progress-bar-bg rounded-full overflow-hidden">
+<div class="h-full progress-bar-fill highlight" data-width="95%" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-6 pt-4 border-t border-[#044c73] border-opacity-30 flex justify-between text-[#4e5d6c] text-xs uppercase tracking-widest footer-section" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+<p>MARPA EQUITY PATHWAY 2026</p>
+<p>CONFIDENTIAL · FINANCIAL DATA</p>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        // Staggered slide-in animation for rows
+        gsap.to(".metric-row", {
+            duration: 0.8,
+            x: 0,
+            opacity: 1,
+            stagger: 0.15,
+            ease: "power3.out"
+        });
+
+        // Animate progress bars after rows appear
+        gsap.utils.toArray(".progress-bar-fill").forEach(bar => {
+            gsap.to(bar, {
+                width: bar.getAttribute("data-width"),
+                duration: 1.2,
+                delay: 0.8,
+                ease: "power2.out"
+            });
+        });
+
+        // Header and footer fade in
+        gsap.from(".header-section, .footer-section", {
+            duration: 1,
+            opacity: 0,
+            y: -20,
+            delay: 0.2,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+    });
+</script>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80af8691e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script></body></html>

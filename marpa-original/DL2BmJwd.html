@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/DL2BmJwd -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>What This Means for MARPA's Legacy</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(8)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Left Side - Quote */
+        .quote-container {
+            flex: 1.1;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: var(--coral);
+            opacity: 0.2;
+            position: absolute;
+            line-height: 1;
+        }
+
+        .quote-open {
+            top: -40px;
+            left: -20px;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 36px;
+            line-height: 1.4;
+            color: var(--text-light);
+            position: relative;
+            z-index: 10;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .highlight-text {
+            color: var(--coral);
+            font-weight: 700;
+        }
+
+        /* Divider */
+        .vertical-divider {
+            width: 1px;
+            height: 70%;
+            background-color: var(--teal);
+            opacity: 0.3;
+        }
+
+        /* Right Side - List */
+        .list-container {
+            flex: 0.9;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 16px 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .list-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(141, 182, 176, 0.3);
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+            background: rgba(141, 182, 176, 0.1);
+            color: var(--teal);
+        }
+
+        .list-item:hover .icon-box {
+            background: rgba(141, 182, 176, 0.2);
+            color: var(--text-light);
+        }
+        
+        /* Specific icon colors */
+        .icon-culture { color: var(--yellow); background: rgba(255, 230, 109, 0.1); }
+        .icon-client { color: var(--teal); background: rgba(141, 182, 176, 0.1); }
+        .icon-money { color: var(--coral); background: rgba(239, 99, 55, 0.1); }
+        .icon-stake { color: #5B8FA6; background: rgba(91, 143, 166, 0.1); }
+        .icon-future { color: #fff; background: rgba(255, 255, 255, 0.1); }
+
+        .item-text {
+            font-size: 16px;
+            color: var(--text-light);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Decorative Tag */
+        .context-tag {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--coral);
+            padding-bottom: 4px;
+        }
+
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-4 border-b border-[#044c73] pb-4">
+<div>
+<div class="flex items-center mb-2">
+<span class="w-2 h-2 bg-[#95E1D3] rounded-full mr-2"></span>
+<p class="text-[#95E1D3] font-bold tracking-widest text-xs uppercase">Chapter 5: Making the Decision</p>
+</div>
+<h1 class="font-serif text-4xl text-[#f5f7fa]">WHAT THIS MEANS FOR MARPA'S LEGACY</h1>
+</div>
+<div class="text-right">
+<p class="text-[#b0b8c1] text-sm font-mono">BEYOND THE NUMBERS</p>
+</div>
+</div>
+<!-- Main Content -->
+<div class="content-wrapper">
+<!-- Left: Quote -->
+<div class="quote-container">
+<p class="context-tag">The Core Philosophy</p>
+<div class="quote-mark quote-open">"</div>
+<blockquote class="quote-text">
+                    This isn't just about equity percentages or EBITDA multiples. 
+                    <br><br>
+                    It's about what happens to the <span class="highlight-text">company Luke built</span> when he's no longer running it day-to-day.
+                </blockquote>
+</div>
+<!-- Center Divider -->
+<div class="vertical-divider"></div>
+<!-- Right: Strategic Pillars -->
+<div class="list-container">
+<div class="list-item">
+<div class="icon-box icon-culture">
+<i class="fas fa-gem"></i>
+</div>
+<p class="item-text">Preserve MARPA's culture of excellence</p>
+</div>
+<div class="list-item">
+<div class="icon-box icon-client">
+<i class="fas fa-handshake"></i>
+</div>
+<p class="item-text">Ensure client relationships continue seamlessly</p>
+</div>
+<div class="list-item">
+<div class="icon-box icon-money">
+<i class="fas fa-shield-alt"></i>
+</div>
+<p class="item-text">Provide financial security for Luke's family</p>
+</div>
+<div class="list-item">
+<div class="icon-box icon-stake">
+<i class="fas fa-chart-pie"></i>
+</div>
+<p class="item-text">Give Bodie a meaningful stake in the outcome</p>
+</div>
+<div class="list-item">
+<div class="icon-box icon-future">
+<i class="fas fa-rocket"></i>
+</div>
+<p class="item-text">Position MARPA for the next 20 years</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-auto pt-4 flex justify-between items-center border-t border-[#044c73] border-opacity-30">
+<div class="flex items-center gap-2">
+<i class="fas fa-heart text-[#ef6337] text-xs"></i>
+<p class="text-[#4e5d6c] text-xs tracking-widest uppercase">Succession is stewardship</p>
+</div>
+<p class="text-[#4e5d6c] text-xs font-mono">CH5-S07</p>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b38bd1e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDrHFciQMKmDhSx%2BWyfPBOrJHecyZcQWYyFVhq3DhXywIhEY7ZjxSV%2B%2F4YPSZ8puPpLszvY5FBfIL6dgtkva8l%2FNKPLfMmBSUM4a5vuWsWeT1AKc7JvZO4eg1oV86wt%2FZOoNhWwkpQ4TGgiMpZFpzjzyQeOx5NagQLIlu9V64PywVHfNMFIArc%2FwwGGQHaxLp5LlBHPVxbeVgpeC4ZMxqiqyWWU04psa2b63mf1jXwQJJUUmKN4JQjce93g6pe%2B4a5wKesEUSmGFZMh52su1RYb0bgdqZ1Re1mKyo6iLBKSu2Xi2AnzLqRCtPWdqTt7Wg9wxPGdkj6nV2iKBuTIHKX%2FQvUqIMjWZ97zhdp6OQeuD5ugrwsNFbW2TisRyV55zlP%2B1MzLAlRT7sKl%2FQ%2FbVblBgYYc3vLgy2zj86yeVzqCHVGva1qoVqaKHhUWMtol8Q%2FiHSz%2BniNafHBoKgSFTqrW4DwAYEVNMBaSMUkl9xQZSQDQBFqQT6waM2NrCBUD%2B93wfcEDtX4kuQZv8bBkzhdRA1JNoy5hTW6DhXpHFBrrdzgDYI1F%2Bf6oq9%2BZbU8m6NN50coCmVn7Jnbnb02qwFeYMeHW6PSoys7K7Pp0UVp6od3%2FQ23Ytn8r9ErMWMli5pUltde34slxNFeX9%2BxsQDUQyexu5BBpLRHHdK5xv7VQb8I%2Fr48%2BweiiMl5IXDweII2Z5M2NHK64V71knK6YEVi9LUQsRvR43BVWSO5OvsA%2F5S";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDrHFciQMKmDhSx+WyfPBOrJHecyZcQWYyFVhq3DhXywIhEY7ZjxSV+/4YPSZ8puPpLszvY5FBfIL6dgtkva8l/NKPLfMmBSUM4a5vuWsWeT1AKc7JvZO4eg1oV86wt/ZOoNhWwkpQ4TGgiMpZFpzjzyQeOx5NagQLIlu9V64PywVHfNMFIArc/wwGGQHaxLp5LlBHPVxbeVgpeC4ZMxqiqyWWU04psa2b63mf1jXwQJJUUmKN4JQjce93g6pe+4a5wKesEUSmGFZMh52su1RYb0bgdqZ1Re1mKyo6iLBKSu2Xi2AnzLqRCtPWdqTt7Wg9wxPGdkj6nV2iKBuTIHKX/QvUqIMjWZ97zhdp6OQeuD5ugrwsNFbW2TisRyV55zlP+1MzLAlRT7sKl/Q/bVblBgYYc3vLgy2zj86yeVzqCHVGva1qoVqaKHhUWMtol8Q/iHSz+niNafHBoKgSFTqrW4DwAYEVNMBaSMUkl9xQZSQDQBFqQT6waM2NrCBUD+93wfcEDtX4kuQZv8bBkzhdRA1JNoy5hTW6DhXpHFBrrdzgDYI1F+f6oq9+ZbU8m6NN50coCmVn7Jnbnb02qwFeYMeHW6PSoys7K7Pp0UVp6od3/Q23Ytn8r9ErMWMli5pUltde34slxNFeX9+xsQDUQyexu5BBpLRHHdK5xv7VQb8I/r48+weiiMl5IXDweII2Z5M2NHK64V71knK6YEVi9LUQsRvR43BVWSO5OvsA/5S";
+    </script>
+    </body></html>

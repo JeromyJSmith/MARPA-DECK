@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/6uB4zIhL -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Business Health Snapshot</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(1)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<script src="./gsap.min.js"></script>
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --yellow: #FFE66D;
+            --turquoise: #4ECDC4;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            padding: 40px 60px;
+        }
+        .metric-card {
+            background-color: var(--navy);
+            border-left: 4px solid var(--coral);
+            transition: transform 0.3s ease;
+        }
+        
+        .valuation-spectrum {
+            position: relative;
+            height: 12px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        /* Using solid color fallback strictly as requested (no gradients) */
+        .spectrum-fill {
+            position: absolute;
+            left: 20%;
+            right: 20%;
+            top: 0;
+            bottom: 0;
+            background-color: var(--coral);
+            opacity: 0.7;
+            border-radius: 6px;
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-10 border-b border-gray-800 pb-4 header-animate" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div>
+<p class="text-[#ef6337] font-bold tracking-widest text-sm mb-1 uppercase">Chapter 1: Valuation Foundation</p>
+<h2 class="font-serif text-4xl text-[#f5f7fa]">WHERE MARPA STANDS TODAY</h2>
+</div>
+<div class="text-right">
+<p class="text-[#8db6b0] text-sm font-medium">Business Health Snapshot</p>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="flex-1 flex flex-col justify-center">
+<!-- Top Row Metrics (2x2 Grid) -->
+<div class="grid grid-cols-2 gap-8 mb-10">
+<!-- Metric 1: Pipeline -->
+<div class="metric-card p-8 rounded-r-lg shadow-lg flex flex-col justify-between h-48 relative overflow-hidden" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 30px);">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<i class="fas fa-funnel-dollar text-6xl text-white"></i>
+</div>
+<div>
+<p class="text-[#8db6b0] text-sm uppercase tracking-wider mb-2">Active Pipeline</p>
+<p class="text-[#f5f7fa] text-6xl font-bold font-serif">$5.5M</p>
+</div>
+<div class="flex items-center mt-4">
+<span class="bg-green-900 text-green-300 text-xs px-2 py-1 rounded mr-2">Verified</span>
+<p class="text-[#b0b8c1] text-sm">Client meeting confirmed</p>
+</div>
+</div>
+<!-- Metric 2: Revenue Target -->
+<div class="metric-card p-8 rounded-r-lg shadow-lg flex flex-col justify-between h-48 relative overflow-hidden" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 30px);">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<i class="fas fa-bullseye text-6xl text-white"></i>
+</div>
+<div>
+<p class="text-[#8db6b0] text-sm uppercase tracking-wider mb-2">Revenue Target 2025</p>
+<!-- Updated Canonical Value: $11.03M -->
+<p class="text-[#f5f7fa] text-6xl font-bold font-serif">$11.03M</p>
+</div>
+<div class="flex items-center mt-4">
+<span class="bg-green-900 text-green-300 text-xs px-2 py-1 rounded mr-2">Verified</span>
+<p class="text-[#b0b8c1] text-sm">Final Draft Planning</p>
+</div>
+</div>
+<!-- Metric 3: Win Rate -->
+<div class="metric-card p-8 rounded-r-lg shadow-lg flex flex-col justify-between h-48 relative overflow-hidden" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 30px);">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<i class="fas fa-trophy text-6xl text-white"></i>
+</div>
+<div>
+<p class="text-[#8db6b0] text-sm uppercase tracking-wider mb-2">Win Rate</p>
+<p class="text-[#ef6337] text-6xl font-bold font-serif">90-95%</p>
+</div>
+<div class="flex items-center mt-4">
+<p class="text-[#b0b8c1] text-sm border-l-2 border-[#ef6337] pl-2">Approx. 2× Industry Average</p>
+</div>
+</div>
+<!-- Metric 4: EBITDA Foundation -->
+<div class="metric-card p-8 rounded-r-lg shadow-lg flex flex-col justify-between h-48 relative overflow-hidden bg-[#033a59]" style="border-left-color: rgb(141, 182, 176); translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 30px);">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<i class="fas fa-chart-line text-6xl text-white"></i>
+</div>
+<div>
+<p class="text-[#8db6b0] text-sm uppercase tracking-wider mb-2">Trailing EBITDA</p>
+<!-- Updated Canonical Value: $1.655M -->
+<p class="text-[#f5f7fa] text-6xl font-bold font-serif">$1.655M</p>
+</div>
+<div class="flex items-center mt-4">
+<p class="text-[#b0b8c1] text-sm">Base for all valuation scenarios</p>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Valuation Range Spectrum -->
+<div class="bg-[#0b0f13] p-8 rounded-lg border border-[#1e2730] spectrum-container opacity-0" style="opacity: 1;">
+<div class="flex justify-between items-end mb-4">
+<p class="text-[#8db6b0] uppercase tracking-widest text-sm font-semibold">Estimated Valuation Range</p>
+<!-- Updated Range: $7.08M - $17.0M -->
+<p class="text-[#f5f7fa] font-serif text-2xl">$7.08M <span class="text-[#4e5d6c] mx-2">—</span> $17.0M</p>
+</div>
+<!-- Visual Range Bar -->
+<div class="valuation-spectrum">
+<!-- Active Range Fill (Representing the spread) -->
+<div class="spectrum-fill" style="left: 20%; width: 60%; translate: none; rotate: none; scale: none; transform-origin: 328.319px 6px; transform: translate(0px, 0px);"></div>
+<!-- Low End Marker -->
+<div class="absolute flex flex-col items-center spectrum-marker" style="left: 20%; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-4 h-4 bg-[#4ECDC4] rounded-full border-2 border-[#0f1419] mb-2"></div>
+<p class="text-[#4ECDC4] text-xs font-bold">$7.08M</p>
+<p class="text-[#b0b8c1] text-[10px] mt-1">Conservative</p>
+</div>
+<!-- Mid Marker -->
+<div class="absolute flex flex-col items-center spectrum-marker" style="left: 50%; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-4 h-4 bg-[#FFE66D] rounded-full border-2 border-[#0f1419] mb-2"></div>
+<!-- Recalculated Mid: ~11.8M (1.655 * 7.14) -->
+<p class="text-[#FFE66D] text-xs font-bold">~$11.8M</p>
+<p class="text-[#b0b8c1] text-[10px] mt-1">Mid-Range</p>
+</div>
+<!-- High End Marker -->
+<div class="absolute flex flex-col items-center spectrum-marker" style="left: 80%; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="w-4 h-4 bg-[#ef6337] rounded-full border-2 border-[#0f1419] mb-2"></div>
+<p class="text-[#ef6337] text-xs font-bold">$17.0M</p>
+<p class="text-[#b0b8c1] text-[10px] mt-1">Premium Path</p>
+</div>
+</div>
+<div class="mt-2 text-center">
+<p class="text-[#b0b8c1] text-xs italic">Valuation outcome depends on the selected succession pathway (Solo vs. Design-Build)</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="absolute bottom-4 right-6">
+<p class="text-[#4e5d6c] text-xs">CH1-S03 | Executive Dashboard</p>
+</div>
+</div>
+<script>
+    // GSAP Animations
+    document.addEventListener("DOMContentLoaded", (event) => {
+        const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+        // Header animation
+        tl.from(".header-animate", { 
+            duration: 0.8, 
+            y: -20, 
+            opacity: 0 
+        })
+        
+        // Cards stagger animation
+        .from(".metric-card", { 
+            duration: 0.8, 
+            y: 30, 
+            opacity: 0, 
+            stagger: 0.15 
+        }, "-=0.4")
+        
+        // Spectrum container fade in
+        .to(".spectrum-container", {
+            duration: 0.6,
+            opacity: 1
+        }, "-=0.2")
+
+        // Spectrum bar expand
+        .from(".spectrum-fill", { 
+            duration: 1, 
+            scaleX: 0,
+            transformOrigin: "center left",
+            ease: "power2.inOut" 
+        }, "-=0.4")
+        
+        // Markers pop up
+        .from(".spectrum-marker", { 
+            duration: 0.5, 
+            y: 15, 
+            opacity: 0, 
+            ease: "back.out(1.7)", 
+            stagger: 0.2 
+        }, "-=0.2");
+    });
+</script>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80af8681e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script></body></html>

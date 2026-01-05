@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/UL1dZQEM -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Option A: Bodie as Solo Principal</title>
+<link href="./tailwind.min.css" rel="stylesheet">
+<link href="./css2(2)" rel="stylesheet">
+<link href="./all.min.css" rel="stylesheet">
+<style>
+        :root {
+            --bg-dark: #0f1419;
+            --navy: #044c73;
+            --coral: #ef6337;
+            --teal: #8db6b0;
+            --turquoise: #4ECDC4;
+            --yellow: #FFE66D;
+            --text-light: #f5f7fa;
+            --text-muted: #b0b8c1;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .metrics-panel {
+            flex: 1.4;
+            background-color: rgba(4, 76, 115, 0.1);
+            border: 1px solid rgba(4, 76, 115, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-row {
+            display: flex;
+            align-items: center;
+            padding: 24px 30px;
+            border-bottom: 1px solid rgba(4, 76, 115, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-row:hover {
+            background-color: rgba(4, 76, 115, 0.2);
+        }
+
+        .metric-label {
+            flex: 1;
+            color: var(--text-muted);
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-value {
+            flex: 1;
+            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .highlight-coral { color: var(--coral); }
+        .highlight-turquoise { color: var(--turquoise); }
+        
+        .anchor-panel {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--turquoise);
+            padding: 24px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 24px;
+        }
+
+        .emotional-anchor-card {
+            background: linear-gradient(145deg, rgba(78, 205, 196, 0.1) 0%, rgba(15, 20, 25, 0) 100%);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Custom watermark icon */
+        .bg-icon {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 150px;
+            color: var(--turquoise);
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            color: var(--turquoise);
+            opacity: 0.3;
+            line-height: 0;
+            margin-bottom: 30px;
+        }
+
+        .emotional-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 28px;
+            color: var(--text-light);
+            line-height: 1.4;
+            z-index: 10;
+        }
+        
+        .header-pill {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--navy);
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 10px;
+        }
+
+        .path-badge {
+            background-color: var(--turquoise);
+            color: var(--bg-dark);
+            font-weight: 800;
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+<style id="slide-selected-style">
+  [data-slide-selected]::before
+  /* [data-slide-hover-selected]::before */ {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    padding: 4px;
+    border-radius: 0px;
+    outline: 2px solid #0f7fff !important;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+ /* [data-slide-hover-selected], */
+  [data-slide-selected] {
+    position: relative;
+    outline: none;
+    cursor: default;
+  }
+
+  img[data-slide-selected],
+  img[data-slide-hover-selected],
+  [data-slide-hover-selected],
+  [item-slide-click-selected],
+  [item-slide-selected] {
+    border: 2px solid #0f7fff !important;
+  }
+
+
+</style></head>
+<body>
+<div class="slide-container">
+<!-- Header -->
+<div class="flex justify-between items-end mb-6 border-b border-[#044c73] border-opacity-50 pb-6">
+<div>
+<div class="path-badge">PATH A</div>
+<h1 class="font-serif text-4xl text-[#f5f7fa] mb-2">OPTION A: BODIE AS SOLO PRINCIPAL</h1>
+<p class="text-[#b0b8c1] text-lg">Executive Summary of 49% Ownership Scenario</p>
+</div>
+<div class="text-right">
+<div class="header-pill">
+<i class="fas fa-user text-[#4ECDC4] mr-2 text-sm"></i>
+<span class="text-[#f5f7fa] font-mono text-sm font-bold">SOLO TRACK</span>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="main-content">
+<!-- Left Column: Metrics Panel -->
+<div class="metrics-panel">
+<div class="bg-[#044c73] px-8 py-4 flex justify-between items-center">
+<span class="text-[#f5f7fa] font-bold tracking-wider uppercase text-sm">Core Attributes</span>
+<span class="text-[#8db6b0] text-xs uppercase">Scenario A Data</span>
+</div>
+<!-- Metric 1 -->
+<div class="metric-row">
+<div class="metric-label">
+<i class="fas fa-chart-pie mr-3 text-[#4ECDC4] opacity-70"></i>Target Ownership
+                </div>
+<div class="metric-value highlight-coral">49% <span class="text-base font-normal text-[#b0b8c1] ml-1">by Year 11</span></div>
+</div>
+<!-- Metric 2 -->
+<div class="metric-row">
+<div class="metric-label">
+<i class="fas fa-coins mr-3 text-[#4ECDC4] opacity-70"></i>Total Investment
+                </div>
+<div class="metric-value highlight-coral">~$8.3M</div>
+</div>
+<!-- Metric 3 -->
+<div class="metric-row">
+<div class="metric-label">
+<i class="fas fa-file-invoice-dollar mr-3 text-[#4ECDC4] opacity-70"></i>SBA Loan Burden
+                </div>
+<div class="metric-value text-[#f5f7fa]">100% <span class="text-base font-normal text-[#b0b8c1] ml-1">on Bodie</span></div>
+</div>
+<!-- Metric 4 -->
+<div class="metric-row">
+<div class="metric-label">
+<i class="fas fa-user-tie mr-3 text-[#4ECDC4] opacity-70"></i>Luke's Position
+                </div>
+<div class="metric-value text-[#f5f7fa]">51% <span class="text-base font-normal text-[#b0b8c1] ml-1">+ final authority</span></div>
+</div>
+<!-- Metric 5 -->
+<div class="metric-row">
+<div class="metric-label">
+<i class="fas fa-hourglass-half mr-3 text-[#4ECDC4] opacity-70"></i>Time to Target
+                </div>
+<div class="metric-value text-[#f5f7fa]">11 Years</div>
+</div>
+</div>
+<!-- Right Column: Anchor Panel -->
+<div class="anchor-panel">
+<!-- Implications Box -->
+<div class="info-box">
+<h3 class="text-[#4ECDC4] font-bold uppercase text-sm tracking-wider mb-2">What This Means</h3>
+<p class="text-[#f5f7fa] text-lg leading-relaxed">
+                    Maximum control for Bodie over the long term, but requires maximum upfront financial exposure and personal risk assumption.
+                </p>
+</div>
+<!-- Emotional Anchor Card -->
+<div class="emotional-anchor-card">
+<i class="fas fa-swimmer bg-icon"></i>
+<div class="quote-mark">"</div>
+<p class="emotional-text">
+                    Feels like jumping into the deep end alone.
+                </p>
+<div class="mt-6 flex items-center justify-center">
+<div class="h-px bg-[#4ECDC4] w-12 opacity-50"></div>
+<span class="mx-3 text-[#8db6b0] text-xs uppercase tracking-widest">Emotional Anchor</span>
+<div class="h-px bg-[#4ECDC4] w-12 opacity-50"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="mt-auto pt-4 border-t border-[#044c73] border-opacity-50 flex justify-between items-center text-[#4e5d6c] text-xs uppercase tracking-widest">
+<p>Chapter 2: Solo Principal Path</p>
+<p>Confidential · Marpa Equity Pathway 2026</p>
+</div>
+</div>
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9b92a80b28851e9b&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+
+<script src="./slide-inner.js"></script>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtqfhu2mm54XACih%2F1pc1jg9uqCs6FnsXZJpqsLwz4mFIs0MQ50BmJ%2BJaIvzwXVIFzoFgcFcQ82Wq3irJmV3lFV7JCNTLgN7Ku3yegCj4WBLZ9x2xmRBBRM2FqrxEa6POolD%2FU7%2FG09PIzRPOOVlKYDb%2BAcFuFfJAUyeqxgqWt44YK1RsbnCI0Qv5ht2tTv0KZn4%2BZkrC9TocYbpxMj91t47A9k0ocoCRQi4AOlEZvTOQBtnS9Ydk1X%2BBFFEtaQkKUioGUeQyAmlTbkqDiEMCYkEyqK3yUZGERkeTSbAYWvetUVAWXLuuK2QThiyE7z%2FY7%2F8WIVarDZFCr6eA3K3Y8GHbozGV%2FusMiSjFNQmc58fnlk4RZnI1fDg%2BEkcsO6v6CdWuSIfnAdqfhF1BcnJ1dJMEXhvM8r8tEOle2BhGCukGH35xrNTKt9d8UqlHl8kRb5ai0ufhaCwazmkFPHbazj8wJZOoYZs4myU8%2FJ5t2sZxIuD2rqKl0mYcGu%2B%2FDkOqKogNpExrGTmjc98jwgkwJ0dGLE9Dex6xc3mwshqk%2Bio%2F0jFQtW5TdoJ0BEFII6%2FoTT9tu3QgFvLbSkRM5ShjtDedt%2FqX56ox7a9JjP3DwwcqkbNaFmcMggtH4iWT4kUVcxDsMH1UYscbO3i9eq82mIeyj7iHUUmpdLPTnINQOCidEMZb%2FrGuGjj8vAoT%2FOLB59ptLAZ4Wg4VVqfsDT3nbAdsZCxkLPcm5RXSqxN3fzw";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtqfhu2mm54XACih/1pc1jg9uqCs6FnsXZJpqsLwz4mFIs0MQ50BmJ+JaIvzwXVIFzoFgcFcQ82Wq3irJmV3lFV7JCNTLgN7Ku3yegCj4WBLZ9x2xmRBBRM2FqrxEa6POolD/U7/G09PIzRPOOVlKYDb+AcFuFfJAUyeqxgqWt44YK1RsbnCI0Qv5ht2tTv0KZn4+ZkrC9TocYbpxMj91t47A9k0ocoCRQi4AOlEZvTOQBtnS9Ydk1X+BFFEtaQkKUioGUeQyAmlTbkqDiEMCYkEyqK3yUZGERkeTSbAYWvetUVAWXLuuK2QThiyE7z/Y7/8WIVarDZFCr6eA3K3Y8GHbozGV/usMiSjFNQmc58fnlk4RZnI1fDg+EkcsO6v6CdWuSIfnAdqfhF1BcnJ1dJMEXhvM8r8tEOle2BhGCukGH35xrNTKt9d8UqlHl8kRb5ai0ufhaCwazmkFPHbazj8wJZOoYZs4myU8/J5t2sZxIuD2rqKl0mYcGu+/DkOqKogNpExrGTmjc98jwgkwJ0dGLE9Dex6xc3mwshqk+io/0jFQtW5TdoJ0BEFII6/oTT9tu3QgFvLbSkRM5ShjtDedt/qX56ox7a9JjP3DwwcqkbNaFmcMggtH4iWT4kUVcxDsMH1UYscbO3i9eq82mIeyj7iHUUmpdLPTnINQOCidEMZb/rGuGjj8vAoT/OLB59ptLAZ4Wg4VVqfsDT3nbAdsZCxkLPcm5RXSqxN3fzw";
+    </script>
+    </body></html>
